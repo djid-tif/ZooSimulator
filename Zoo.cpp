@@ -3,6 +3,7 @@
 //
 
 #include "Zoo.h"
+#include <iostream>
 
 using namespace std;
 

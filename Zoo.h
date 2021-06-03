@@ -5,6 +5,9 @@
 #ifndef ZOOSIMULATOR_ZOO_H
 #define ZOOSIMULATOR_ZOO_H
 
+#include <vector>;
+#include <string>;
+using namespace std;
 
 #include <cstdlib>
 #include "IAnimal.h"
