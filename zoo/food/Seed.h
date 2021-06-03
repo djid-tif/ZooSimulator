@@ -18,14 +18,14 @@ class Seed : public IFood {
 
 public:
 
-    Seed():quantity(2500) {};
+    Seed(Zoo *zoo);
 
     void addSeeds(int q);
 
     int getQuantity();
 
 
-    string remove(int q);
+    bool remove(int q);
 };
 
 

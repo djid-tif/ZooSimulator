@@ -7,6 +7,8 @@
 
 using namespace std;
 
+Zoo::Zoo() : budget(4000) {}
+
 uint Zoo::getBudget() {
     return budget;
 }
@@ -29,11 +31,13 @@ bool Zoo::debiteBudget(uint debite) {
 void Zoo::addAnimal(IAnimal *animal) {
     listAnimals.push_back(animal);
 }
-void Zoo::deleteAnimal(IAnimal *animal)
 
-IFood Zoo::getFood() {
-    return listFood ;
-}
+
+//void Zoo::deleteAnimal(IAnimal *animal)
+//
+//IFood Zoo::getFood() {
+//    return listFood ;
+//}
 
 
 

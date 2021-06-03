@@ -6,6 +6,8 @@
 #define ZOOSIMULATOR_IMALE_H
 
 
+#include "IAnimal.h"
+
 class IMale : public IAnimal{
 
 };

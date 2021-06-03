@@ -6,11 +6,13 @@
 #define ZOOSIMULATOR_IANIMAL_H
 
 
-#include "IFood.h"
+#include "../food/IFood.h"
+
+class IFood;
 
 class IAnimal {
 
-    IFood feed;
+    IFood *feed;
     int amountOfFoodToEaPerDay;
     int hungryDay;
     int sexualMaturity;

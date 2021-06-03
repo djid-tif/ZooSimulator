@@ -7,6 +7,9 @@
 
 using namespace std;
 
+Seed::Seed(Zoo *zoo) : IFood(zoo), quantity(2500) {}
+
+
 void Seed::addSeeds(int q) {
     quantity += q;
 }

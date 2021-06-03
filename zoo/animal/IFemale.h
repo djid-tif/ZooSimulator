@@ -8,8 +8,9 @@
 
 #include "IAnimal.h"
 
+
 class IFemale : public IAnimal{
-    int scopeNumber :
+
 };
 
 

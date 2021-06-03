@@ -6,16 +6,17 @@
 #define ZOOSIMULATOR_IFOOD_H
 
 
+#include "../Zoo.h"
+
+class Zoo;
+
 class IFood {
-    int meat;
-    int seed;
+    Zoo *m_zoo;
 
 public:
-    IFood();
+    IFood(Zoo *);
+    Zoo *getZoo() const;
 
-    int getMeatQuantity();
-
-    int getSeedquantity();
 };
 
 

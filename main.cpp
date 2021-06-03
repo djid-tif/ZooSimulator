@@ -1,12 +1,19 @@
 #include <iostream>
-#include "Zoo.h"
+#include "zoo/Zoo.h"
+
+
+using namespace std;
 
 
 int main() {
 
     Zoo zoo;
 
-    for (i)
+    cout << zoo.getBudget() << endl;
+
+    for (int i = 0; i <= 120; i++) {
+
+    }
 
     std::cout << "Hello, World!" << std::endl;
 

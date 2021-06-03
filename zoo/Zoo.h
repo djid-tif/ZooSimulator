@@ -5,26 +5,28 @@
 #ifndef ZOOSIMULATOR_ZOO_H
 #define ZOOSIMULATOR_ZOO_H
 
-#include <vector>;
-#include <string>;
+#include <vector>
+#include <string>
+
 using namespace std;
 
 #include <cstdlib>
-#include "IAnimal.h"
-#include "IFood.h"
+#include "animal/IAnimal.h"
+#include "food/IFood.h"
 
-typedef vector<IAnimal *> listAnimals;
-typedef vector<IFood *> listFood;
-
+class IAnimal;
+class IFood;
 
 class Zoo {
 
     uint budget;
     vector<IAnimal *> listAnimals;
-    IFood listFood;
+    vector<IFood *> listFood;
 
 
 public:
+
+    Zoo();
 
     uint getBudget();
     void creditBudget(uint credit);
