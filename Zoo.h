@@ -25,7 +25,7 @@ public:
 
     uint getBudget();
     void creditBudget(uint credit);
-    void debiteBudget(uint debite);
+    bool debiteBudget(uint debite);
 
     void addAnimal(IAnimal* animal);
 
