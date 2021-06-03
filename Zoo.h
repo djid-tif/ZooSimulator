@@ -6,9 +6,31 @@
 #define ZOOSIMULATOR_ZOO_H
 
 
+#include <cstdlib>
+#include "IAnimal.h"
+#include "IFood.h"
+
+typedef vector<IAnimal *> listAnimals;
+typedef vector<IFood *> listFood;
+
+
 class Zoo {
 
-};
+    uint budget;
+    vector<IAnimal *> listAnimals;
+    IFood listFood;
 
+
+public:
+
+    uint getBudget();
+    void creditBudget(uint credit);
+    void debiteBudget(uint debite);
+
+    void addAnimal(IAnimal* animal);
+
+
+
+};
 
 #endif //ZOOSIMULATOR_ZOO_H

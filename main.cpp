@@ -6,6 +6,8 @@ int main() {
 
     Zoo zoo;
 
+    for (i)
+
     std::cout << "Hello, World!" << std::endl;
 
 
