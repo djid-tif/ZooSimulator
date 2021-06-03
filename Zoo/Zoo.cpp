@@ -1,9 +1,10 @@
 //
-// Created by madjid on 03/06/2021.
+// Created by raphou le bg on 03/06/2021.
 //
 
 #include <iostream>
 #include "Zoo.h"
+#include <iostream>
 
 using namespace std;
 
@@ -15,12 +16,14 @@ void Zoo::creditBudget(uint credit) {
     cout << "%d" << credit << "credited ! \n" << endl;
     cout << "New budget : %d" << budget << endl;
 }
-void Zoo::debiteBudget(uint debite) {
+
+bool Zoo::debiteBudget(uint debite) {
     if (debite > budget) {
         cout << "It's superior as your budget !!" << endl;
-        return;
+        return false;
     } else {
         budget -= debite;
+        return true;
     }
 }
 

@@ -3,18 +3,21 @@
 //
 
 #include "Seed.h"
+#include <iostream>
 
+using namespace std;
 
 void Seed::addSeeds(int q) {
     quantity += q;
 }
 
-string Seed::remove(int q) {
+bool Seed::remove(int q) {
     if (q <= quantity) {
         quantity -= q;
-        return to_string(q) + " kg of seeds remain";
+        cout << q << " kg of seeds remain" << endl;
+        return true;
     } else {
-        return ""
+        return false;
     }
 }
 
