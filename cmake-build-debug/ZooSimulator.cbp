@@ -44,7 +44,17 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/."/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Chicken"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/EagleF"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/TigerF"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/EagleM"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Rooster"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/TigerM"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
@@ -66,7 +76,17 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/."/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Chicken"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/EagleF"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/TigerF"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/EagleM"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Rooster"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/TigerM"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food"/>
+					<Add directory="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include"/>
@@ -82,46 +102,82 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IAnimal.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Chicken/Chicken.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IAnimal.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Chicken/Chicken.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IFemale.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/EagleF/EagleF.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IFemale.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/EagleF/EagleF.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IFood.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Female.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IFood.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/Female.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IMale.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/TigerF/TigerF.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/IMale.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Female/TigerF/TigerF.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Meat.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/IAnimal.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Meat.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/IAnimal.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Seed.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/EagleM/EagleM.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Seed.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/EagleM/EagleM.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo.cpp">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Male.cpp">
 			<Option target="ZooSimulator"/>
 		</Unit>
-		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo.h">
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Male.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Rooster/Rooster.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/Rooster/Rooster.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/TigerM/TigerM.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Animals/Male/TigerM/TigerM.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/IFood.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/IFood.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/Meat.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/Meat.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/Seed.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Food/Seed.h">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo/Zoo.cpp">
+			<Option target="ZooSimulator"/>
+		</Unit>
+		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/Zoo/Zoo.h">
 			<Option target="ZooSimulator"/>
 		</Unit>
 		<Unit filename="/Users/raphael/Desktop/Ynov/cour C/C++/ZooSimulator/main.cpp">
