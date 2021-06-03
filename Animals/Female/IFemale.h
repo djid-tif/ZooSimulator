@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_IFEMALE_H
 
 
-#include "IAnimal.h"
+#include "Animals/IAnimal.h"
 
 class IFemale : public IAnimal{
     int scopeNumber :

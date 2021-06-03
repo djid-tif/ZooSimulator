@@ -2,6 +2,7 @@
 // Created by madjid on 03/06/2021.
 //
 
+#include <iostream>
 #include "Zoo.h"
 
 using namespace std;

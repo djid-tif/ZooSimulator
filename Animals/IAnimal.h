@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_IANIMAL_H
 
 
-#include "IFood.h"
+#include "Food/IFood.h"
 
 class IAnimal {
 

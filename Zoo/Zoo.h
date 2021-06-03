@@ -7,8 +7,8 @@
 
 
 #include <cstdlib>
-#include "IAnimal.h"
-#include "IFood.h"
+#include "Animals/IAnimal.h"
+#include "Food/IFood.h"
 
 typedef vector<IAnimal *> listAnimals;
 typedef vector<IFood *> listFood;
