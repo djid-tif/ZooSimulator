@@ -23,7 +23,7 @@ EagleF::EagleF() {
 
     litter = 2;
     gestationTime = 45;
-    percentInfantMortality 50;
+    percentInfantMortality = 50;
 
-    partner = nullptr
+    partner = nullptr;
 }

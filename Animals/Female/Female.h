@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_FEMALE_H
 
 
-#include <Animals/IAnimal.h>
+#include <IAnimal.h>
 
 class Female : public IAnimal{
 

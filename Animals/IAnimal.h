@@ -6,7 +6,6 @@
 #define ZOOSIMULATOR_IANIMAL_H
 
 #include "string"
-#include "Food/IFood.h"
 
 using namespace std;
 

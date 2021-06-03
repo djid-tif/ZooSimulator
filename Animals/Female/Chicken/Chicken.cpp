@@ -23,5 +23,5 @@ Chicken::Chicken() {
 
     litter = 200;
     gestationTime = 6 * 7;
-    percentInfantMortality 50;
+    percentInfantMortality = 50;
 }

@@ -6,10 +6,9 @@
 #define ZOOSIMULATOR_EAGLEF_H
 
 
-#include <Food/IFood.h>
-#include <Animals/Female/Female.h>
+#include <Female.h>
 
-class EagleF :public Female{
+class EagleF : public Female{
 
     IAnimal* partner;
 

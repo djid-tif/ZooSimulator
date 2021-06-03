@@ -6,10 +6,9 @@
 #define ZOOSIMULATOR_ROOSTER_H
 
 
-#include <Food/IFood.h>
-#include <Animals/Male/Male.h>
+#include <Male.h>
 
-class Rooster :public Male{
+class Rooster : public Male{
 public:
     Rooster();
 };

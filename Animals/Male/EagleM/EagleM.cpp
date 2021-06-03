@@ -21,7 +21,6 @@ EagleM::EagleM() {
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
 
-    partner = nullptr
-
+    partner = nullptr;
 }
 

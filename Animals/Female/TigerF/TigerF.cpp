@@ -23,7 +23,7 @@ TigerF::TigerF() {
 
     litter = 3;
     gestationTime = 3 * 30;
-    percentInfantMortality 33;
+    percentInfantMortality = 33;
 
     waitingDayForNewLitter = 20 * 7;
 }

@@ -6,8 +6,7 @@
 #define ZOOSIMULATOR_EAGLEM_H
 
 
-#include <Food/IFood.h>
-#include <Animals/Male/Male.h>
+#include <Male.h>
 
 class EagleM : public Male {
 

@@ -6,10 +6,9 @@
 #define ZOOSIMULATOR_CHICKEN_H
 
 
-#include <Food/IFood.h>
-#include <Animals/Female/Female.h>
+#include <Female.h>
 
-class Chicken :public Female{
+class Chicken : public Female{
 public:
     Chicken();
 };

@@ -6,8 +6,7 @@
 #define ZOOSIMULATOR_TIGERF_H
 
 
-#include <Food/IFood.h>
-#include <Animals/Female/Female.h>
+#include <Female.h>
 
 class TigerF :public Female{
 
