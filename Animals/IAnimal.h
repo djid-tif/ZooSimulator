@@ -5,21 +5,29 @@
 #ifndef ZOOSIMULATOR_IANIMAL_H
 #define ZOOSIMULATOR_IANIMAL_H
 
-
+#include "string"
 #include "Food/IFood.h"
+
+using namespace std;
 
 class IAnimal {
 
-    IFood feed;
+protected:
+
+    string feed;
     int amountOfFoodToEaPerDay;
     int hungryDay;
     int sexualMaturity;
     int endOfReproduction;
     int lifeExperience;
-    int buyingPrice;
-    int sellingPrice;
+    int buyingPriceAt6Month;
+    int sellingPriceAt6Month;
+    int buyingPriceAt4Year;
+    int sellingPriceAt4Year;
+    int buyingPriceAt14Year;
+    int sellingPriceAt14Year;
     int numberOfVisitorsPerMonthOfHighSeason;
-    int numberOfVisitorsPerMonthOfLowSeason;
+    float numberOfVisitorsPerMonthOfLowSeason;
     int annualGrant;
 
 public:
