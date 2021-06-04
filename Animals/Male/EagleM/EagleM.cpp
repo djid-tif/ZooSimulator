@@ -11,7 +11,7 @@ EagleM::EagleM() {
     sexualMaturity = 4 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    buyingPriceAt6Month = 1000;
+    purchasePriceAt6Month = 1000;
     sellingPriceAt6Month = 500;
     purchasePriceAt4Year = 4000;
     sellingPriceAt4Year = 2000;

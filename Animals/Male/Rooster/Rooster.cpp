@@ -11,7 +11,7 @@ Rooster::Rooster() {
     sexualMaturity = 6 * 30;
     endOfReproduction = 8 * 365;
     lifeExperience = 15 * 365;
-    buyingPriceAt6Month = 100;
+    purchasePriceAt6Month = 100;
     sellingPriceAt6Month = 20;
     purchasePriceAt4Year = 100;
     sellingPriceAt4Year = 20;

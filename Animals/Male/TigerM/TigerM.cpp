@@ -2,6 +2,7 @@
 // Created by Raphael Arabeyre on 03/06/2021.
 //
 
+
 #include "TigerM.h"
 
 TigerM::TigerM() {
@@ -11,7 +12,7 @@ TigerM::TigerM() {
     sexualMaturity = 6 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    buyingPriceAt6Month = 3000;
+    purchasePriceAt6Month = 3000;
     sellingPriceAt6Month = 1500;
     purchasePriceAt4Year = 120000;
     sellingPriceAt4Year = 60000;

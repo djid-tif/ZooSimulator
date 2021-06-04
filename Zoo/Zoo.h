@@ -11,13 +11,9 @@
 using namespace std;
 
 #include <cstdlib>
-<<<<<<< HEAD:Zoo/Zoo.h
-#include <IAnimal.h>
-#include <IFood.h>
-=======
+
 #include <Seed.h>
 #include <Meat.h>
->>>>>>> main:zoo/Zoo.h
 
 
 class IAnimal;
