@@ -7,6 +7,7 @@
 
 #include "string"
 
+<<<<<<< HEAD:Animals/IAnimal.h
 using namespace std;
 
 class IAnimal {
@@ -14,6 +15,15 @@ class IAnimal {
 protected:
     int age;
     string feed;
+=======
+#include "../food/IFood.h"
+
+class IFood;
+
+class IAnimal {
+
+    IFood *feed;
+>>>>>>> main:zoo/animal/IAnimal.h
     int amountOfFoodToEaPerDay;
     int hungryDay;
     int sexualMaturity;

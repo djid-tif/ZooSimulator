@@ -1,12 +1,22 @@
 #include <iostream>
-#include "Zoo/Zoo.h"
+
+
+using namespace std;
 
 
 int main() {
 
-    Zoo zoo;
+    Zoo *zoo = new Zoo(new Seed, new Meat);
 
-    for (i)
+    zoo->creditBudget(1000);
+    zoo->debiteBudget(4500);
+    
+
+    cout << zoo->getBudget() << endl;
+
+    for (int i = 0; i <= 120; i++) {
+
+    }
 
     std::cout << "Hello, World!" << std::endl;
 
