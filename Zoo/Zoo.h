@@ -10,8 +10,8 @@
 using namespace std;
 
 #include <cstdlib>
-#include "Animals/IAnimal.h"
-#include "Food/IFood.h"
+#include <IAnimal.h>
+#include <IFood.h>
 
 typedef vector<IAnimal *> listAnimals;
 typedef vector<IFood *> listFood;

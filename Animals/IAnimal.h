@@ -12,18 +12,18 @@ using namespace std;
 class IAnimal {
 
 protected:
-
+    int age;
     string feed;
     int amountOfFoodToEaPerDay;
     int hungryDay;
     int sexualMaturity;
     int endOfReproduction;
     int lifeExperience;
-    int buyingPriceAt6Month;
+    int purchasePriceAt6Month;
     int sellingPriceAt6Month;
-    int buyingPriceAt4Year;
+    int purchasePriceAt4Year;
     int sellingPriceAt4Year;
-    int buyingPriceAt14Year;
+    int purchasePriceAt14Year;
     int sellingPriceAt14Year;
     int numberOfVisitorsPerMonthOfHighSeason;
     float numberOfVisitorsPerMonthOfLowSeason;
@@ -32,6 +32,8 @@ protected:
 public:
     IAnimal();
     virtual ~IAnimal();
+
+
 };
 
 

@@ -13,9 +13,9 @@ Rooster::Rooster() {
     lifeExperience = 15 * 365;
     buyingPriceAt6Month = 100;
     sellingPriceAt6Month = 20;
-    buyingPriceAt4Year = 100;
+    purchasePriceAt4Year = 100;
     sellingPriceAt4Year = 20;
-    buyingPriceAt14Year = 100;
+    purchasePriceAt14Year = 100;
     sellingPriceAt14Year = 20;
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 0.5;

@@ -5,17 +5,18 @@
 #include "EagleF.h"
 
 EagleF::EagleF() {
+    age = 0;
     feed = "Meet";
     amountOfFoodToEaPerDay = 300;
     hungryDay = 10;
     sexualMaturity = 4 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    buyingPriceAt6Month = 1000;
+    purchasePriceAt6Month = 1000;
     sellingPriceAt6Month = 500;
-    buyingPriceAt4Year = 4000;
+    purchasePriceAt4Year = 4000;
     sellingPriceAt4Year = 2000;
-    buyingPriceAt14Year = 2000;
+    purchasePriceAt14Year = 2000;
     sellingPriceAt14Year = 400;
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;

@@ -5,17 +5,18 @@
 #include "Chicken.h"
 
 Chicken::Chicken() {
+    age = 0;
     feed = "Seed";
     amountOfFoodToEaPerDay = 150;
     hungryDay = 1;
     sexualMaturity = 6 * 30;
     endOfReproduction = 8 * 365;
     lifeExperience = 15 * 365;
-    buyingPriceAt6Month = 20;
+    purchasePriceAt6Month = 20;
     sellingPriceAt6Month = 10;
-    buyingPriceAt4Year = 20;
+    purchasePriceAt4Year = 20;
     sellingPriceAt4Year = 10;
-    buyingPriceAt14Year = 20;
+    purchasePriceAt14Year = 20;
     sellingPriceAt14Year = 10;
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 0.5;
