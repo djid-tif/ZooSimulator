@@ -11,8 +11,9 @@
 using namespace std;
 
 #include <cstdlib>
-#include "animal/IAnimal.h"
-#include "food/IFood.h"
+#include <Seed.h>
+#include <Meat.h>
+
 
 class IAnimal;
 class IFood;
@@ -21,21 +22,22 @@ class Zoo {
 
     uint budget;
     vector<IAnimal *> listAnimals;
-    vector<IFood *> listFood;
+    Seed m_seed;
+    Meat m_meat;
 
 
 public:
 
-    Zoo();
+    Zoo(Seed *, Meat *);
 
-    uint getBudget();
-    void creditBudget(uint credit);
+    uint getBudget() const;
+    bool creditBudget(uint credit);
     bool debiteBudget(uint debite);
 
     void addAnimal(IAnimal* animal);
 
 
-
+    void buyFood(int seed, int meat);
 };
 
 #endif //ZOOSIMULATOR_ZOO_H

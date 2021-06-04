@@ -2,19 +2,23 @@
 // Created by madjid on 03/06/2021.
 //
 
-#include "Seed.h"
-#include <iostream>
+#include "Meat.h"
+#include "iostream"
+
 
 using namespace std;
 
-Seed::Seed(Zoo *zoo) : IFood(zoo), quantity(2500) {}
+Meat::Meat() : quantity(5000) {}
 
-
-void Seed::addSeeds(int q) {
+void Meat::addMeat(int q) {
     quantity += q;
 }
 
-bool Seed::remove(int q) {
+int Meat::getQuantity() {
+    return 0;
+}
+
+bool Meat::remove(int q) {
     if (q <= quantity) {
         quantity -= q;
         cout << q << " kg of seeds remain" << endl;
@@ -23,9 +27,3 @@ bool Seed::remove(int q) {
         return false;
     }
 }
-
-int Seed::getQuantity() {
-    return quantity;
-}
-
-

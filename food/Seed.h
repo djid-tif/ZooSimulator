@@ -7,8 +7,10 @@
 
 
 #include <cstdlib>
-#include "IFood.h"
+
 #include <map>
+#include <IFood.h>
+
 
 using namespace std;
 
@@ -18,7 +20,7 @@ class Seed : public IFood {
 
 public:
 
-    Seed(Zoo *zoo);
+    Seed();
 
     void addSeeds(int q);
 

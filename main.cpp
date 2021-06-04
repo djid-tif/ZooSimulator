@@ -1,5 +1,7 @@
 #include <iostream>
 #include "zoo/Zoo.h"
+#include "food/Seed.h"
+#include "food/Meat.h"
 
 
 using namespace std;
@@ -7,9 +9,13 @@ using namespace std;
 
 int main() {
 
-    Zoo zoo;
+    Zoo *zoo = new Zoo(new Seed, new Meat);
 
-    cout << zoo.getBudget() << endl;
+    zoo->creditBudget(1000);
+    zoo->debiteBudget(4500);
+    
+
+    cout << zoo->getBudget() << endl;
 
     for (int i = 0; i <= 120; i++) {
 

@@ -7,15 +7,16 @@
 
 using namespace std;
 
-Zoo::Zoo() : budget(4000) {}
+Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {}
 
-uint Zoo::getBudget() {
+uint Zoo::getBudget() const {
     return budget;
 }
-void Zoo::creditBudget(uint credit) {
+
+bool Zoo::creditBudget(uint credit) {
     budget += credit;
-    cout << "%d" << credit << "credited ! \n" << endl;
-    cout << "New budget : %d" << budget << endl;
+    cout << credit << " credited ! " << "New budget : " << budget << endl;
+    return true;
 }
 
 bool Zoo::debiteBudget(uint debite) {
@@ -32,12 +33,14 @@ void Zoo::addAnimal(IAnimal *animal) {
     listAnimals.push_back(animal);
 }
 
+void Zoo::buyFood(int seed ,int meat) {
+    m_seed.addSeeds(seed);
+}
 
-//void Zoo::deleteAnimal(IAnimal *animal)
-//
-//IFood Zoo::getFood() {
-//    return listFood ;
-//}
+
+
+
+
 
 
 

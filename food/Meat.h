@@ -15,7 +15,7 @@ class Meat: public IFood {
 
 public:
 
-    Meat(Zoo *zoo);
+    Meat();
 
     void addMeat(int q);
 
