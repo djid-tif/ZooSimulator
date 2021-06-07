@@ -38,6 +38,10 @@ void Zoo::buyFood(int seed ,int meat) {
     m_seed.addSeeds(seed);
 }
 
+const vector<IAnimal *> &Zoo::getListAnimals() const {
+    return listAnimals;
+}
+
 
 
 

@@ -14,10 +14,11 @@ using namespace std;
 
 #include <Seed.h>
 #include <Meat.h>
+#include <IAnimal.h>
+
+typedef unsigned int uint;
 
 
-class IAnimal;
-class IFood;
 
 class Zoo {
 
@@ -36,6 +37,8 @@ public:
     bool debiteBudget(uint debite);
 
     void addAnimal(IAnimal* animal);
+
+    const vector<IAnimal *> &getListAnimals() const;
 
 
     void buyFood(int seed, int meat);

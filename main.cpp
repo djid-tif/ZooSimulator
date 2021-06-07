@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include <Zoo.h>
+#include "Event/Event.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ int main() {
     zoo->creditBudget(1000);
     zoo->debiteBudget(4500);
     
+    Event->ProbabilityEvent();
 
     cout << zoo->getBudget() << endl;
 
@@ -19,7 +21,7 @@ int main() {
 
     }
 
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Hello, World!" << endl;
 
 
 
