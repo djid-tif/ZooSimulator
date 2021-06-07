@@ -30,8 +30,27 @@ protected:
     int annualGrant;
 
 public:
-    IAnimal();
     virtual ~IAnimal();
+    void oneDaysHasPassed();
+    void oneMonthHasPassed();
+
+    int getAge() const;
+    string getFeed() const;
+    int getAmountOfFoodToEaPerDay() const;
+    int getHungryDay() const;
+    int getSexualMaturity() const;
+    int getEndOfReproduction() const;
+    int getLifeExperience() const;
+    int getPurchasePriceAt6Month() const;
+    int getSellingPriceAt6Month() const;
+    int getPurchasePriceAt4Year() const;
+    int getSellingPriceAt4Year() const;
+    int getPurchasePriceAt14Year() const;
+    int getSellingPriceAt14Year() const;
+    int getNumberOfVisitorsPerMonthOfHighSeason() const;
+    float getNumberOfVisitorsPerMonthOfLowSeason() const;
+    int getAnnualGrant() const;
+
 
 
 };

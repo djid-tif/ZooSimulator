@@ -11,6 +11,8 @@
 class Rooster : public Male{
 public:
     Rooster();
+
+    Rooster(int ageSet);
 };
 
 

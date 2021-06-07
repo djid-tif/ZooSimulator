@@ -7,13 +7,15 @@
 
 #include <vector>
 #include <string>
-
-using namespace std;
-
 #include <cstdlib>
-
 #include <Seed.h>
 #include <Meat.h>
+#include <IHabitat.h>
+#include <ChickenCoop.h>
+#include <TigerHabitat.h>
+#include <EagleHabitat.h>
+
+using namespace std;
 
 
 class IAnimal;
@@ -23,6 +25,7 @@ class Zoo {
 
     uint budget;
     vector<IAnimal *> listAnimals;
+    vector<IHabitat *> listHabitat;
     Seed m_seed;
     Meat m_meat;
 
@@ -30,6 +33,8 @@ class Zoo {
 public:
 
     Zoo(Seed *, Meat *);
+
+    Zoo();
 
     uint getBudget() const;
     bool creditBudget(uint credit);
@@ -39,6 +44,21 @@ public:
 
 
     void buyFood(int seed, int meat);
+
+    vector<IHabitat *> getListHabitat() const;
+
+    void buyHabitat();
+
+    void addHabitat(IHabitat *);
+
+    void sellHabitat(IHabitat *habitat);
+
+
+    void addAnimalInsideHabitat(IHabitat *habitat, IAnimal *aninal);
+
+    void moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat);
+
+    void buyAnimal();
 };
 
 #endif //ZOOSIMULATOR_ZOO_H

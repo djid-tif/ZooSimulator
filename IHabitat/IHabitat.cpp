@@ -4,8 +4,8 @@
 
 #include "IHabitat.h"
 
-const vector<IAnimal *> &IHabitat::getAnimalsInside() const {
-    return AnimalsInside;
+ vector<IAnimal *> IHabitat::getAnimalsInside() const {
+    return animalsInside;
 }
 
 int IHabitat::getPurchasePrice() const {
@@ -27,3 +27,13 @@ int IHabitat::getOverpopulationLossPerMonth() const {
 int IHabitat::getProbabilityOfIllnessPerMonth() const {
     return probabilityOfIllnessPerMonth;
 }
+
+void IHabitat::addAnimalInThis(IAnimal* animal) {
+    animalsInside.push_back(animal);
+}
+
+void IHabitat::eraseAnimalInside(int index){
+    animalsInside.erase(animalsInside.begin()+index);
+}
+
+

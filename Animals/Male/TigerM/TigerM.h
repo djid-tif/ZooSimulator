@@ -11,6 +11,8 @@
 class TigerM :public Male{
 public:
     TigerM();
+
+    TigerM(int ageSet);
 };
 
 

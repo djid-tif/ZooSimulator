@@ -10,10 +10,12 @@
 
 class TigerF :public Female{
 
+
     int waitingDayForNewLitter;
 
 public:
     TigerF();
+    TigerF(int ageSet);
 };
 
 

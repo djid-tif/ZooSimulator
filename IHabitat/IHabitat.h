@@ -11,7 +11,9 @@
 #include <vector>
 
 class IHabitat {
-    vector<IAnimal*> AnimalsInside;
+
+protected:
+    vector<IAnimal*> animalsInside;
     int purchasePrice;
     int sellingPrice;
     int ability;
@@ -19,17 +21,16 @@ class IHabitat {
     int probabilityOfIllnessPerMonth;
 
 public:
-    const vector<IAnimal *> &getAnimalsInside() const;
-
+    vector<IAnimal *> getAnimalsInside() const;
     int getPurchasePrice() const;
-
     int getSellingPrice() const;
-
     int getAbility() const;
-
     int getOverpopulationLossPerMonth() const;
-
     int getProbabilityOfIllnessPerMonth() const;
+
+    void addAnimalInThis(IAnimal*);
+
+    void eraseAnimalInside(int index);
 };
 
 

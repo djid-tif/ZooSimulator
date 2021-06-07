@@ -10,10 +10,12 @@
 
 class EagleM : public Male {
 
+
     IAnimal* partner;
 
 public:
     EagleM();
+    EagleM(int ageSet);
 };
 
 

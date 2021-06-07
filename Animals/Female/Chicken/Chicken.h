@@ -11,6 +11,7 @@
 class Chicken : public Female{
 public:
     Chicken();
+    Chicken(int);
 };
 
 

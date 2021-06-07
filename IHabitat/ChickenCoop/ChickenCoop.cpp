@@ -3,3 +3,9 @@
 //
 
 #include "ChickenCoop.h"
+
+ChickenCoop::ChickenCoop() {
+    purchasePrice = 300;
+    sellingPrice = 50;
+
+}
