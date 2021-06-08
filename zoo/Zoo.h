@@ -6,17 +6,16 @@
 #define ZOOSIMULATOR_ZOO_H
 
 #include <vector>
+#include <cstdlib>
 #include <string>
 
 using namespace std;
 
 #include <cstdlib>
-#include <Seed.h>
-#include <Meat.h>
+#include "../food/Seed.h"
+#include "../food/Meat.h"
+#include "animal/IAnimal.h"
 
-
-class IAnimal;
-class IFood;
 
 class Zoo {
 
@@ -33,10 +32,7 @@ public:
     uint getBudget() const;
     bool creditBudget(uint credit);
     bool debiteBudget(uint debite);
-
     void addAnimal(IAnimal* animal);
-
-
     void buyFood(int seed, int meat);
 };
 

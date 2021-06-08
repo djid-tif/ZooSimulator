@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {}
+Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {};
 
 uint Zoo::getBudget() const {
     return budget;
@@ -34,7 +34,8 @@ void Zoo::addAnimal(IAnimal *animal) {
 }
 
 void Zoo::buyFood(int seed ,int meat) {
-    m_seed.addSeeds(seed);
+    debiteBudget(m_seed.addSeeds(seed));
+
 }
 
 
