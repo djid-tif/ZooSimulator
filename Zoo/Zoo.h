@@ -46,19 +46,16 @@ public:
     void buyFood(int seed, int meat);
 
     vector<IHabitat *> getListHabitat() const;
+    void deleteHabitat(int);
 
     void buyHabitat();
-
     void addHabitat(IHabitat *);
-
-    void sellHabitat(IHabitat *habitat);
-
+    void sellHabitat(int indexOfHabitat);
 
     void addAnimalInsideHabitat(IHabitat *habitat, IAnimal *aninal);
-
     void moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat);
-
     void buyAnimal();
+
 };
 
 #endif //ZOOSIMULATOR_ZOO_H

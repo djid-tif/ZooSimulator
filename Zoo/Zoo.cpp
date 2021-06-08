@@ -80,13 +80,19 @@ void Zoo::buyHabitat(){
     }
 }
 
-void Zoo::sellHabitat(IHabitat* habitat){
+void Zoo::sellHabitat(int indexOfHabitat){
+
+    IHabitat* habitat = listHabitat.at(indexOfHabitat);
+
     if (habitat->getAnimalsInside().size() != 0){
         cout << "You can sell habitat, cause is not empty !" << endl; //TODO lakhdar
     } else {
         cout << "You are sell habitat." << endl;                      //TODO lakhdar
         creditBudget(habitat->getSellingPrice());
-        delete (habitat);
+
+        listHabitat.erase(listHabitat.begin()+indexOfHabitat);
+
+        delete habitat;
     }
 }
 
@@ -112,8 +118,6 @@ void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int
 void Zoo::addAnimalInsideHabitat(IHabitat* habitat, IAnimal* aninal){
     habitat->addAnimalInThis(aninal);
 }
-
-
 
 void Zoo::buyAnimal(){
 
@@ -245,5 +249,16 @@ void Zoo::buyAnimal(){
 
 
     }
+}
+
+void Zoo::deleteHabitat(int indexOfHabitat) {
+    IHabitat* habitat = listHabitat.at(indexOfHabitat);
+    
+    for (int i = 0; i < habitat->getAnimalsInside().size(); ++i){
+        habitat->deleteAnimalInside(i);
+    }
+
+    listHabitat.erase(listHabitat.begin()+indexOfHabitat);
+    delete habitat;
 }
 

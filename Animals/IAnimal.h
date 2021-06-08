@@ -5,7 +5,8 @@
 #ifndef ZOOSIMULATOR_IANIMAL_H
 #define ZOOSIMULATOR_IANIMAL_H
 
-#include "string"
+#include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -30,7 +31,8 @@ protected:
     int annualGrant;
 
 public:
-    virtual ~IAnimal();
+    ~IAnimal();
+    void deleteAnimal();
     void oneDaysHasPassed();
     void oneMonthHasPassed();
 

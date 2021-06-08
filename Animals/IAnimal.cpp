@@ -5,9 +5,7 @@
 #include "IAnimal.h"
 
 
-IAnimal::~IAnimal() {
-
-}
+IAnimal::~IAnimal() = default;
 
 void IAnimal::oneDaysHasPassed() {
 
@@ -79,4 +77,8 @@ int IAnimal::getAnnualGrant() const {
 
 int IAnimal::getNumberOfVisitorsPerMonthOfHighSeason() const {
     return numberOfVisitorsPerMonthOfHighSeason;
+}
+
+void IAnimal::deleteAnimal() {
+    delete this;
 }

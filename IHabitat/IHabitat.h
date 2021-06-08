@@ -21,6 +21,8 @@ protected:
     int probabilityOfIllnessPerMonth;
 
 public:
+
+    ~IHabitat();
     vector<IAnimal *> getAnimalsInside() const;
     int getPurchasePrice() const;
     int getSellingPrice() const;
@@ -29,8 +31,9 @@ public:
     int getProbabilityOfIllnessPerMonth() const;
 
     void addAnimalInThis(IAnimal*);
-
     void eraseAnimalInside(int index);
+
+    void deleteAnimalInside(int indexOfAnimal);
 };
 
 

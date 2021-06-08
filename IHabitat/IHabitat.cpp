@@ -36,4 +36,15 @@ void IHabitat::eraseAnimalInside(int index){
     animalsInside.erase(animalsInside.begin()+index);
 }
 
+void IHabitat::deleteAnimalInside(int indexOfAnimal){
+    IAnimal* animal = animalsInside.at(indexOfAnimal);
+    animalsInside.erase(animalsInside.begin()+indexOfAnimal);
+    delete animal;
+}
+
+IHabitat::~IHabitat() {
+    for (auto & i : animalsInside) {   //TODO: when IHabitat has deleted, animals inside hasn't deleted, and i do no why ?
+        delete i;
+    }
+}
 
