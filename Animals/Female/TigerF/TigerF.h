@@ -16,6 +16,8 @@ class TigerF :public Female{
 public:
     TigerF();
     TigerF(int ageSet);
+
+    void updateAnimal();
 };
 
 

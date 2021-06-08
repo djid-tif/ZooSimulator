@@ -13,6 +13,8 @@ public:
     TigerM();
 
     TigerM(int ageSet);
+
+    void updateAnimal();
 };
 
 

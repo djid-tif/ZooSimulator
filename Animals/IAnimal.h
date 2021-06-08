@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include <Zoo.h>
 
 using namespace std;
 
@@ -17,24 +18,25 @@ protected:
     string feed;
     int amountOfFoodToEaPerDay;
     int hungryDay;
-    int sexualMaturity;
+    int ageToSexualMaturity;
     int endOfReproduction;
     int lifeExperience;
-    int purchasePriceAt6Month;
-    int sellingPriceAt6Month;
-    int purchasePriceAt4Year;
-    int sellingPriceAt4Year;
-    int purchasePriceAt14Year;
-    int sellingPriceAt14Year;
+    int purchasePrice;
+    int sellingPrice;
     int numberOfVisitorsPerMonthOfHighSeason;
-    float numberOfVisitorsPerMonthOfLowSeason;
+    int numberOfVisitorsPerMonthOfLowSeason;
     int annualGrant;
+
+    bool reproductiveCapacity = false;
+    bool sick = false;
+    int sickCount;
 
 public:
     ~IAnimal();
     void deleteAnimal();
-    void oneDaysHasPassed();
-    void oneMonthHasPassed();
+    void oneDaysHasPassed(Zoo*);
+    void oneMonthHasPassed(int, Zoo*);
+
 
     int getAge() const;
     string getFeed() const;
@@ -43,16 +45,11 @@ public:
     int getSexualMaturity() const;
     int getEndOfReproduction() const;
     int getLifeExperience() const;
-    int getPurchasePriceAt6Month() const;
-    int getSellingPriceAt6Month() const;
-    int getPurchasePriceAt4Year() const;
-    int getSellingPriceAt4Year() const;
-    int getPurchasePriceAt14Year() const;
-    int getSellingPriceAt14Year() const;
+    int getPurchasePrice() const;
+    int getSellingPrice() const;
     int getNumberOfVisitorsPerMonthOfHighSeason() const;
-    float getNumberOfVisitorsPerMonthOfLowSeason() const;
+    int getNumberOfVisitorsPerMonthOfLowSeason() const;
     int getAnnualGrant() const;
-
 
 
 };

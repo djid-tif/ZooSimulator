@@ -54,6 +54,16 @@ void Zoo::buyFood(int seed ,int meat) {
 void Zoo::addHabitat(IHabitat* habitat){
     listHabitat.push_back(habitat);
 }
+void Zoo::deleteHabitat(int indexOfHabitat) {
+    IHabitat* habitat = listHabitat.at(indexOfHabitat);
+
+    for (int i = 0; i < habitat->getAnimalsInside().size(); ++i){
+        habitat->deleteAnimalInside(i);
+    }
+
+    listHabitat.erase(listHabitat.begin()+indexOfHabitat);
+    delete habitat;
+}
 
 void Zoo::buyHabitat(){
     cout << "witch habit want you buy ?" << endl;                   //TODO Lakhdar
@@ -79,7 +89,6 @@ void Zoo::buyHabitat(){
         debiteBudget(eagleHabitat.getPurchasePrice());
     }
 }
-
 void Zoo::sellHabitat(int indexOfHabitat){
 
     IHabitat* habitat = listHabitat.at(indexOfHabitat);
@@ -95,6 +104,7 @@ void Zoo::sellHabitat(int indexOfHabitat){
         delete habitat;
     }
 }
+
 
 void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat){
 
@@ -114,11 +124,9 @@ void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int
         }
     }
 }
-
 void Zoo::addAnimalInsideHabitat(IHabitat* habitat, IAnimal* aninal){
     habitat->addAnimalInThis(aninal);
 }
-
 void Zoo::buyAnimal(){
 
     cout << " Animal :               | 	Prix achat:  "   << endl;          //TODO Lakhdar
@@ -157,7 +165,10 @@ void Zoo::buyAnimal(){
 
         cin >> resForIndexOfHisHabitat;
 
-        addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new Chicken(6*30));
+        Chicken* chicken = new Chicken(6*30);
+        debiteBudget(chicken->getPurchasePrice());
+
+        addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], chicken);
 
     } else if (resForAnimal == '2'){
 
@@ -174,7 +185,10 @@ void Zoo::buyAnimal(){
 
         cin >> resForIndexOfHisHabitat;
 
-        addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new Rooster(6*30));
+        Rooster* rooster = new Rooster(6*30);
+        debiteBudget(rooster->getPurchasePrice());
+
+        addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], rooster);
 
     } else {
 
@@ -212,7 +226,11 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new TigerF(age));
+                TigerF* tigerF = new TigerF(age);
+                tigerF->updateAnimal();
+                debiteBudget(tigerF->getPurchasePrice());
+
+                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], tigerF);
 
             } else {
                 cout << "ses habitats" << endl; // TODO Lakhdar
@@ -221,7 +239,11 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new TigerM(age));
+                TigerM* tigerM = new TigerM(age);
+                tigerM->updateAnimal();
+                debiteBudget(tigerM->getPurchasePrice());
+
+                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], tigerM);
 
             }
         } else {
@@ -233,7 +255,11 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new EagleF(age));
+                EagleF* eagleF = new EagleF(age);
+                eagleF->updateAnimal();
+                debiteBudget(eagleF->getPurchasePrice());
+
+                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], eagleF);
 
             } else {
                 cout << "ses habitats" << endl; // TODO Lakhdar
@@ -242,7 +268,11 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], new EagleM(age));
+                EagleM* eagleM = new EagleM(age);
+                eagleM->updateAnimal();
+                debiteBudget(eagleM->getPurchasePrice());
+
+                addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], eagleM);
 
             }
         }
@@ -250,15 +280,13 @@ void Zoo::buyAnimal(){
 
     }
 }
+void Zoo::sellAnimal(int indexOfHabitat, int indexOfAnimal){
 
-void Zoo::deleteHabitat(int indexOfHabitat) {
     IHabitat* habitat = listHabitat.at(indexOfHabitat);
-    
-    for (int i = 0; i < habitat->getAnimalsInside().size(); ++i){
-        habitat->deleteAnimalInside(i);
-    }
+    IAnimal* animal = habitat->getAnimalsInside().at(indexOfAnimal);
 
-    listHabitat.erase(listHabitat.begin()+indexOfHabitat);
-    delete habitat;
+    creditBudget(animal->getSellingPrice());
+    habitat->deleteAnimalInside(indexOfAnimal);
 }
+
 

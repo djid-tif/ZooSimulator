@@ -7,12 +7,35 @@
 
 IAnimal::~IAnimal() = default;
 
-void IAnimal::oneDaysHasPassed() {
+void IAnimal::oneDaysHasPassed(Zoo* zoo) {
+    age++;
+
+    if (age == ageToSexualMaturity){
+        reproductiveCapacity = true;
+    } else if (age == endOfReproduction){
+        reproductiveCapacity = false;
+    }
+
+    if (sick && sickCount != 0){
+        sickCount--;
+    } else if (sick && sickCount == 0){
+        sick = false;
+    }
+
+
 
 }
 
-void IAnimal::oneMonthHasPassed() {
-
+void IAnimal::oneMonthHasPassed(int date, Zoo* zoo) {
+    if (!sick) {
+        if (date % 12 * 30 > 5 * 30 && date % 12 * 30 < 9 * 30) {
+            zoo->creditBudget(
+                    numberOfVisitorsPerMonthOfHighSeason * 2 * 17 + numberOfVisitorsPerMonthOfHighSeason * 2 * 13);
+        } else {
+            zoo->creditBudget(
+                    numberOfVisitorsPerMonthOfLowSeason * 2 * 17 + numberOfVisitorsPerMonthOfLowSeason * 2 * 13);
+        }
+    }
 }
 
 int IAnimal::getAge() const {
@@ -32,7 +55,7 @@ int IAnimal::getHungryDay() const {
 }
 
 int IAnimal::getSexualMaturity() const {
-    return sexualMaturity;
+    return ageToSexualMaturity;
 }
 
 int IAnimal::getEndOfReproduction() const {
@@ -43,31 +66,15 @@ int IAnimal::getLifeExperience() const {
     return lifeExperience;
 }
 
-int IAnimal::getPurchasePriceAt6Month() const {
-    return purchasePriceAt6Month;
+int IAnimal::getPurchasePrice() const {
+    return purchasePrice;
 }
 
-int IAnimal::getSellingPriceAt6Month() const {
-    return sellingPriceAt6Month;
+int IAnimal::getSellingPrice() const {
+    return sellingPrice;
 }
 
-int IAnimal::getPurchasePriceAt4Year() const {
-    return purchasePriceAt4Year;
-}
-
-int IAnimal::getSellingPriceAt4Year() const {
-    return sellingPriceAt4Year;
-}
-
-int IAnimal::getPurchasePriceAt14Year() const {
-    return purchasePriceAt14Year;
-}
-
-int IAnimal::getSellingPriceAt14Year() const {
-    return sellingPriceAt14Year;
-}
-
-float IAnimal::getNumberOfVisitorsPerMonthOfLowSeason() const {
+int IAnimal::getNumberOfVisitorsPerMonthOfLowSeason() const {
     return numberOfVisitorsPerMonthOfLowSeason;
 }
 

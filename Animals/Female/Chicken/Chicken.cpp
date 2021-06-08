@@ -9,15 +9,11 @@ Chicken::Chicken() {
     feed = "Seed";
     amountOfFoodToEaPerDay = 150;
     hungryDay = 1;
-    sexualMaturity = 6 * 30;
+    ageToSexualMaturity = 6 * 30;
     endOfReproduction = 8 * 365;
     lifeExperience = 15 * 365;
-    purchasePriceAt6Month = 20;
-    sellingPriceAt6Month = 10;
-    purchasePriceAt4Year = 20;
-    sellingPriceAt4Year = 10;
-    purchasePriceAt14Year = 20;
-    sellingPriceAt14Year = 10;
+    purchasePrice = 20;
+    sellingPrice = 10;
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 0.5;
     annualGrant = 0;
@@ -32,20 +28,20 @@ Chicken::Chicken(int ageSet) {
     feed = "Seed";
     amountOfFoodToEaPerDay = 150;
     hungryDay = 1;
-    sexualMaturity = 6 * 30;
+    ageToSexualMaturity = 6 * 30;
     endOfReproduction = 8 * 365;
     lifeExperience = 15 * 365;
-    purchasePriceAt6Month = 20;
-    sellingPriceAt6Month = 10;
-    purchasePriceAt4Year = 20;
-    sellingPriceAt4Year = 10;
-    purchasePriceAt14Year = 20;
-    sellingPriceAt14Year = 10;
+    purchasePrice = 20;
+    sellingPrice = 10;
     numberOfVisitorsPerMonthOfHighSeason = 2;
-    numberOfVisitorsPerMonthOfLowSeason = 0.5;
+    numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
 
     litter = 200;
     gestationTime = 6 * 7;
     percentInfantMortality = 50;
+}
+
+void Chicken::updateAnimal() {
+
 }

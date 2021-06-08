@@ -10,16 +10,11 @@ TigerM::TigerM() {
     feed = "Meet";
     amountOfFoodToEaPerDay = 12000;
     hungryDay = 2;
-    sexualMaturity = 6 * 365;
+    ageToSexualMaturity = 6 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    purchasePriceAt6Month = 3000;
-    sellingPriceAt6Month = 1500;
-    purchasePriceAt4Year = 120000;
-    sellingPriceAt4Year = 60000;
-    purchasePriceAt14Year = 60000;
-    sellingPriceAt14Year = 10000;
-    numberOfVisitorsPerMonthOfHighSeason = 30;
+    purchasePrice = 3000;
+    sellingPrice = 1500;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
 }
@@ -29,16 +24,24 @@ TigerM::TigerM(int ageSet) {
     feed = "Meet";
     amountOfFoodToEaPerDay = 12000;
     hungryDay = 2;
-    sexualMaturity = 6 * 365;
+    ageToSexualMaturity = 6 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    purchasePriceAt6Month = 3000;
-    sellingPriceAt6Month = 1500;
-    purchasePriceAt4Year = 120000;
-    sellingPriceAt4Year = 60000;
-    purchasePriceAt14Year = 60000;
-    sellingPriceAt14Year = 10000;
+    purchasePrice = 3000;
+    sellingPrice = 1500;
     numberOfVisitorsPerMonthOfHighSeason = 30;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
+}
+
+void TigerM::updateAnimal(){
+
+    if (age == 4*365){
+        purchasePrice = 120000;
+        sellingPrice = 60000;
+    } else if (age == 14*365){
+        purchasePrice = 60000;
+        sellingPrice = 10000;
+    }
+
 }

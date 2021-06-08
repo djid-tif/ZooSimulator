@@ -16,6 +16,8 @@ class EagleF : public Female{
 public:
     EagleF();
     EagleF(int ageSet);
+
+    void updateAnimal();
 };
 
 

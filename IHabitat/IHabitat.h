@@ -32,7 +32,6 @@ public:
 
     void addAnimalInThis(IAnimal*);
     void eraseAnimalInside(int index);
-
     void deleteAnimalInside(int indexOfAnimal);
 };
 

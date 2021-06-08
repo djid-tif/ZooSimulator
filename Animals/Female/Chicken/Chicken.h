@@ -12,6 +12,10 @@ class Chicken : public Female{
 public:
     Chicken();
     Chicken(int);
+
+    void updateAnimal();
+
+    void oneDayPassed();
 };
 
 
