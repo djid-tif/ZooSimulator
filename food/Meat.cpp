@@ -3,7 +3,6 @@
 //
 
 #include "Meat.h"
-#include "iostream"
 
 
 using namespace std;

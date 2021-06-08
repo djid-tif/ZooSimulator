@@ -11,10 +11,10 @@
 using namespace std;
 
 #include <cstdlib>
-
-#include <Seed.h>
-#include <Meat.h>
-#include <IAnimal.h>
+#include <iostream>
+#include "../food/Seed.h"
+#include "../food/Meat.h"
+#include "../Animals/IAnimal.h"
 
 typedef unsigned int uint;
 

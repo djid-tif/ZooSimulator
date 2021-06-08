@@ -3,7 +3,6 @@
 //
 
 #include "Seed.h"
-#include <iostream>
 
 using namespace std;
 

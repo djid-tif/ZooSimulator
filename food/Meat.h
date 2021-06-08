@@ -5,7 +5,7 @@
 #ifndef ZOOSIMULATOR_MEAT_H
 #define ZOOSIMULATOR_MEAT_H
 
-
+#include <iostream>
 #include "IFood.h"
 
 class Meat: public IFood {

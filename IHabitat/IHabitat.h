@@ -6,9 +6,9 @@
 #define ZOOSIMULATOR_IHABITAT_H
 
 
-#include <IAnimal.h>
 #include <iostream>
 #include <vector>
+#include "../Animals/IAnimal.h"
 
 class IHabitat {
     vector<IAnimal*> AnimalsInside;
