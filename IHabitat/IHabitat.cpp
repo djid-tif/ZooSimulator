@@ -48,3 +48,44 @@ IHabitat::~IHabitat() {
     }
 }
 
+void IHabitat::oneDayHasPassed(Zoo* zoo, int indexOfHabitat) {
+
+    bool oneFemale = false;
+    bool oneMale = false;
+
+    for (int i =0; i < animalsInside.size(); ++i){
+        animalsInside[i]->oneDaysHasPassed(zoo, indexOfHabitat, i);
+    }
+
+    for (auto &animal : animalsInside){
+        if (animal->isHungry() || !animal->isCanReproduce() || !animal->isAdaptedToHisHabitat() || !animal->isReproductiveCapacity() || animal->isSick()){
+            return;
+        }
+
+        if (animal->getTypeAnimal() == "Chicken" || animal->getTypeAnimal() == "TigerF" || animal->getTypeAnimal() == "EagleF"){
+            oneFemale = true;
+        } else if (animal->getTypeAnimal() == "Rooster" || animal->getTypeAnimal() == "TigerM" || animal->getTypeAnimal() == "EagleM") {
+            oneMale = true;
+        }
+    }
+
+    if (oneFemale && oneMale) {
+        for (auto &animal : animalsInside) {
+            animal->reproduction();
+        }
+    }
+
+}
+
+void IHabitat::oneMonthHasPassed(int date, Zoo* zoo) {
+
+    for (auto &animal : animalsInside){
+        animal->oneMonthHasPassed(date, zoo);
+    }
+
+}
+
+string IHabitat::getTypeOfAnimal() const {
+    return typeOfAnimal;
+}
+

@@ -17,6 +17,7 @@ EagleM::EagleM() {
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
+    typeAnimal = "EagleM";
 
     partner = nullptr;
 }
@@ -35,6 +36,7 @@ EagleM::EagleM(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
+    typeAnimal = "EagleM";
 
     partner = nullptr;
 }

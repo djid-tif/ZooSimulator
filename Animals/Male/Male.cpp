@@ -3,3 +3,10 @@
 //
 
 #include "Male.h"
+
+void Male::reproduction() {
+
+}
+
+void Male::oneDayOfPregnant() {
+}

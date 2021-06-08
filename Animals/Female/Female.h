@@ -14,6 +14,17 @@ protected:
     int litter;
     int gestationTime;
     int percentInfantMortality;
+
+public:
+    int getLitter() const;
+
+    int getGestationTime() const;
+
+    int getPercentInfantMortality() const;
+
+public:
+    void reproduction();
+    void oneDayOfPregnant(Zoo*, int indexOfHabitat);
 };
 
 

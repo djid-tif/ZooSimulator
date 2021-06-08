@@ -23,6 +23,8 @@ class IFood;
 
 class Zoo {
 
+    int date;
+
     uint budget;
     vector<IAnimal *> listAnimals;
     vector<IHabitat *> listHabitat;
@@ -57,6 +59,11 @@ public:
     void buyAnimal();
 
     void sellAnimal(int indexOfHabitat, int indexOfAnimal);
+
+    void childbirth(int indexOfHabitat,IAnimal*, int percentInfantMortality);
+
+    void oneDayHasPassed();
+    void oneMonthHasPassed();
 };
 
 #endif //ZOOSIMULATOR_ZOO_H

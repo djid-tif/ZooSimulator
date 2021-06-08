@@ -17,10 +17,12 @@ EagleF::EagleF() {
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
+    typeAnimal = "EagleF";
 
     litter = 2;
     gestationTime = 45;
     percentInfantMortality = 50;
+    dayReFertilization = 350;
 
     partner = nullptr;
 }
@@ -38,10 +40,12 @@ EagleF::EagleF(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
+    typeAnimal = "EagleF";
 
     litter = 2;
     gestationTime = 45;
     percentInfantMortality = 50;
+    dayReFertilization = 350;
 
     partner = nullptr;
 }

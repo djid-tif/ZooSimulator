@@ -17,6 +17,8 @@ TigerM::TigerM() {
     sellingPrice = 1500;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
+    typeAnimal = "TigerM";
+
 }
 
 TigerM::TigerM(int ageSet) {
@@ -32,6 +34,8 @@ TigerM::TigerM(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 30;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
+    typeAnimal = "TigerM";
+
 }
 
 void TigerM::updateAnimal(){

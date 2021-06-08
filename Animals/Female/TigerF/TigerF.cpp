@@ -17,6 +17,8 @@ TigerF::TigerF() {
     numberOfVisitorsPerMonthOfHighSeason = 30;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
+    typeAnimal = "TigerF";
+    dayReFertilization = 20*30;
 
     litter = 3;
     gestationTime = 3 * 30;
@@ -38,10 +40,12 @@ TigerF::TigerF(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 30;
     numberOfVisitorsPerMonthOfLowSeason = 5;
     annualGrant = 43800;
+    typeAnimal = "TigerF";
 
     litter = 3;
     gestationTime = 3 * 30;
     percentInfantMortality = 33;
+    dayReFertilization = 20*30;
 
     waitingDayForNewLitter = 20 * 7;
 }

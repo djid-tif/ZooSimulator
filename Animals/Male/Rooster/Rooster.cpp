@@ -17,6 +17,8 @@ Rooster::Rooster() {
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
+    typeAnimal = "Rooster";
+
 }
 
 Rooster::Rooster(int ageSet) {
@@ -32,4 +34,6 @@ Rooster::Rooster(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 0.5;
     annualGrant = 0;
+    typeAnimal = "Rooster";
+
 }

@@ -19,6 +19,7 @@ protected:
     int ability;
     int overpopulationLossPerMonth;
     int probabilityOfIllnessPerMonth;
+    string typeOfAnimal;
 
 public:
 
@@ -29,10 +30,14 @@ public:
     int getAbility() const;
     int getOverpopulationLossPerMonth() const;
     int getProbabilityOfIllnessPerMonth() const;
+    string getTypeOfAnimal() const;
 
     void addAnimalInThis(IAnimal*);
     void eraseAnimalInside(int index);
     void deleteAnimalInside(int indexOfAnimal);
+
+    void oneDayHasPassed(Zoo*, int indexHabitat);
+    void oneMonthHasPassed(int date,Zoo*);
 };
 
 

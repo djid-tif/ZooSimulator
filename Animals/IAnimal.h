@@ -26,23 +26,30 @@ protected:
     int numberOfVisitorsPerMonthOfHighSeason;
     int numberOfVisitorsPerMonthOfLowSeason;
     int annualGrant;
-
+    string typeAnimal;
     bool reproductiveCapacity = false;
     bool sick = false;
-    int sickCount;
+    int sickCount = 0;
+    int countOfDayNoEating = 0;
+    bool adaptedToHisHabitat = false;
+    bool canReproduce = false;
+    bool hungry = false;
+    bool pregnant = false;
+    int pregnantCount = 0;
+    int dayReFertilization;
+    int countDayReFertilization = 0;
 
 public:
     ~IAnimal();
-    void deleteAnimal();
-    void oneDaysHasPassed(Zoo*);
-    void oneMonthHasPassed(int, Zoo*);
+    void oneDaysHasPassed(Zoo*,int indexHabitat,int indexAnimal);
+    void oneMonthHasPassed(int date, Zoo*);
 
 
     int getAge() const;
     string getFeed() const;
     int getAmountOfFoodToEaPerDay() const;
     int getHungryDay() const;
-    int getSexualMaturity() const;
+    int getAgeToSexualMaturity() const;
     int getEndOfReproduction() const;
     int getLifeExperience() const;
     int getPurchasePrice() const;
@@ -50,7 +57,19 @@ public:
     int getNumberOfVisitorsPerMonthOfHighSeason() const;
     int getNumberOfVisitorsPerMonthOfLowSeason() const;
     int getAnnualGrant() const;
+    string getTypeAnimal() const;
 
+
+    bool isReproductiveCapacity() const;
+    bool isSick() const;
+    int getSickCount() const;
+    int getCountOfDayNoEating() const;
+    bool isAdaptedToHisHabitat() const;
+    bool isCanReproduce() const;
+    bool isHungry() const;
+
+    virtual reproduction();
+    virtual oneDayOfPregnant();
 
 };
 

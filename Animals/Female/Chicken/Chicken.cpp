@@ -17,10 +17,12 @@ Chicken::Chicken() {
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 0.5;
     annualGrant = 0;
+    typeAnimal = "Chicken";
 
     litter = 200;
     gestationTime = 6 * 7;
     percentInfantMortality = 50;
+    dayReFertilization = 2;
 }
 
 Chicken::Chicken(int ageSet) {
@@ -36,10 +38,12 @@ Chicken::Chicken(int ageSet) {
     numberOfVisitorsPerMonthOfHighSeason = 2;
     numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
+    typeAnimal = "Chicken";
 
     litter = 200;
     gestationTime = 6 * 7;
     percentInfantMortality = 50;
+    dayReFertilization = 2;
 }
 
 void Chicken::updateAnimal() {

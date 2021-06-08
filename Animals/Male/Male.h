@@ -10,7 +10,9 @@
 
 class Male : public IAnimal{
 
-
+public:
+    void reproduction();
+    void oneDayOfPregnant();
 };
 
 

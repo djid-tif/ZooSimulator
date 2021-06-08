@@ -3,3 +3,10 @@
 //
 
 #include "EagleHabitat.h"
+
+EagleHabitat::EagleHabitat() {
+    purchasePrice = 2000;
+    sellingPrice = 500;
+    typeOfAnimal = "Eagle";
+
+}

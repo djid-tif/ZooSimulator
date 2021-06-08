@@ -14,7 +14,7 @@
 using namespace std;
 
 Zoo::Zoo() {
-    budget =80000;
+    budget = 80000;
 }
 
 Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {}
@@ -47,25 +47,26 @@ void Zoo::addAnimal(IAnimal *animal) {
     listAnimals.push_back(animal);
 }
 
-void Zoo::buyFood(int seed ,int meat) {
+void Zoo::buyFood(int seed, int meat) {
     m_seed.addSeeds(seed);
 }
 
-void Zoo::addHabitat(IHabitat* habitat){
+void Zoo::addHabitat(IHabitat *habitat) {
     listHabitat.push_back(habitat);
 }
-void Zoo::deleteHabitat(int indexOfHabitat) {
-    IHabitat* habitat = listHabitat.at(indexOfHabitat);
 
-    for (int i = 0; i < habitat->getAnimalsInside().size(); ++i){
+void Zoo::deleteHabitat(int indexOfHabitat) {
+    IHabitat *habitat = listHabitat.at(indexOfHabitat);
+
+    for (int i = 0; i < habitat->getAnimalsInside().size(); ++i) {
         habitat->deleteAnimalInside(i);
     }
 
-    listHabitat.erase(listHabitat.begin()+indexOfHabitat);
+    listHabitat.erase(listHabitat.begin() + indexOfHabitat);
     delete habitat;
 }
 
-void Zoo::buyHabitat(){
+void Zoo::buyHabitat() {
     cout << "witch habit want you buy ?" << endl;                   //TODO Lakhdar
     cout << "       Chicken coop ? (300€)       (press 1)" << endl; //TODO Lakhdar
     cout << "       Tiger habitat ? (2'000€)    (press 2)" << endl; //TODO Lakhdar
@@ -75,46 +76,64 @@ void Zoo::buyHabitat(){
 
     cin >> res;
 
-    if (res == '1'){
+    if (res == '1') {
         ChickenCoop chickenCoop;
         addHabitat(&chickenCoop);
         debiteBudget(chickenCoop.getPurchasePrice());
-    } else if (res == '2'){
+    } else if (res == '2') {
         TigerHabitat tigerHabitat;
         addHabitat(&tigerHabitat);
         debiteBudget(tigerHabitat.getPurchasePrice());
-    } else if (res == '3'){
+    } else if (res == '3') {
         EagleHabitat eagleHabitat;
         addHabitat(&eagleHabitat);
         debiteBudget(eagleHabitat.getPurchasePrice());
     }
 }
-void Zoo::sellHabitat(int indexOfHabitat){
 
-    IHabitat* habitat = listHabitat.at(indexOfHabitat);
+void Zoo::sellHabitat(int indexOfHabitat) {
 
-    if (habitat->getAnimalsInside().size() != 0){
+    IHabitat *habitat = listHabitat.at(indexOfHabitat);
+
+    if (habitat->getAnimalsInside().size() != 0) {
         cout << "You can sell habitat, cause is not empty !" << endl; //TODO lakhdar
     } else {
         cout << "You are sell habitat." << endl;                      //TODO lakhdar
         creditBudget(habitat->getSellingPrice());
 
-        listHabitat.erase(listHabitat.begin()+indexOfHabitat);
+        listHabitat.erase(listHabitat.begin() + indexOfHabitat);
 
         delete habitat;
     }
 }
 
 
-void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat){
+void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat) {
 
-    IHabitat* oldHabitat = listHabitat.at(indexOfOldHabitat);
-    IAnimal* animal = oldHabitat->getAnimalsInside().at(indexOfAnimalInOldHabitat);
-    IHabitat* newHabitat = listHabitat.at(indexOfNewHabitat);
+    IHabitat *oldHabitat = listHabitat.at(indexOfOldHabitat);
+    IAnimal *animal = oldHabitat->getAnimalsInside().at(indexOfAnimalInOldHabitat);
+    IHabitat *newHabitat = listHabitat.at(indexOfNewHabitat);
+
+    if (newHabitat->getTypeOfAnimal() == "Chicken") {
+        if (animal->getTypeAnimal() != "Chicken" && animal->getTypeAnimal() != "Rooster") {
+            cout << "The new habitat isn't appropriated." << endl;
+            return;
+        }
+    } else if (newHabitat->getTypeOfAnimal() == "Tiger") {
+        if (animal->getTypeAnimal() != "TigerM" && animal->getTypeAnimal() != "TigerF") {
+            cout << "The new habitat isn't appropriated." << endl;
+            return;
+        }
+    } else if (newHabitat->getTypeOfAnimal() == "Eagle") {
+        if (animal->getTypeAnimal() != "EagleM" && animal->getTypeAnimal() != "EagleF") {
+            cout << "The new habitat isn't appropriated." << endl;
+            return;
+        }
+    }
 
     for (int i = 0; i < oldHabitat->getAnimalsInside().size(); ++i) {
 
-        if (oldHabitat->getAnimalsInside().at(i) == animal){
+        if (oldHabitat->getAnimalsInside().at(i) == animal) {
             newHabitat->addAnimalInThis(oldHabitat->getAnimalsInside().at(i));
             oldHabitat->eraseAnimalInside(i);
 
@@ -123,24 +142,27 @@ void Zoo::moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int
             break;
         }
     }
+
 }
-void Zoo::addAnimalInsideHabitat(IHabitat* habitat, IAnimal* aninal){
+
+void Zoo::addAnimalInsideHabitat(IHabitat *habitat, IAnimal *aninal) {
     habitat->addAnimalInThis(aninal);
 }
-void Zoo::buyAnimal(){
 
-    cout << " Animal :               | 	Prix achat:  "   << endl;          //TODO Lakhdar
-    cout << "-----------------------------------------"   << endl;          //TODO Lakhdar
-    cout << " Tigre 6 mois	         |    3000€  "   << endl;          //TODO Lakhdar
-    cout << " Poule 6 mois	         |    20€  "   << endl;             //TODO Lakhdar
-    cout << " Coq 6 mois	         |    100€  "   << endl;             //TODO Lakhdar
-    cout << " Aigle 6 mois	         |    1000€  "   << endl;             //TODO Lakhdar
-    cout << " Tigre 4 ans	         |    120000€  "   << endl;             //TODO Lakhdar
-    cout << " Aigle 4 ans	         |    4000€  "   << endl;             //TODO Lakhdar
-    cout << " Tigre 14 ans	         |    60000€  "   << endl;             //TODO Lakhdar
-    cout << " Aigle 14 ans	         |    2000€  "   << endl;             //TODO Lakhdar
-    cout << ""   << endl;                                                  //TODO Lakhdar
-    cout << ""   << endl;                                                 //TODO Lakhdar
+void Zoo::buyAnimal() {
+
+    cout << " Animal :               | 	Prix achat:  " << endl;          //TODO Lakhdar
+    cout << "-----------------------------------------" << endl;          //TODO Lakhdar
+    cout << " Tigre 6 mois	         |    3000€  " << endl;          //TODO Lakhdar
+    cout << " Poule 6 mois	         |    20€  " << endl;             //TODO Lakhdar
+    cout << " Coq 6 mois	         |    100€  " << endl;             //TODO Lakhdar
+    cout << " Aigle 6 mois	         |    1000€  " << endl;             //TODO Lakhdar
+    cout << " Tigre 4 ans	         |    120000€  " << endl;             //TODO Lakhdar
+    cout << " Aigle 4 ans	         |    4000€  " << endl;             //TODO Lakhdar
+    cout << " Tigre 14 ans	         |    60000€  " << endl;             //TODO Lakhdar
+    cout << " Aigle 14 ans	         |    2000€  " << endl;             //TODO Lakhdar
+    cout << "" << endl;                                                  //TODO Lakhdar
+    cout << "" << endl;                                                 //TODO Lakhdar
 
     cout << "witch animal want you buy ?" << endl;                       //TODO Lakhdar
     cout << "                           press :  Chicken - 1 " << endl; //TODO Lakhdar
@@ -151,10 +173,10 @@ void Zoo::buyAnimal(){
     char resForAnimal = ' ';                                             //TODO Lakhdar
     cin >> resForAnimal;
 
-    if (resForAnimal == '1'){
+    if (resForAnimal == '1') {
 
-        for (auto & i : listHabitat) {      // It's for verify if zoo has already a appropriate habitat
-            if (i->getAbility() == 10 ){
+        for (auto &i : listHabitat) {      // It's for verify if zoo has already a appropriate habitat
+            if (i->getAbility() == 10) {
                 break;
             }
         }
@@ -165,15 +187,15 @@ void Zoo::buyAnimal(){
 
         cin >> resForIndexOfHisHabitat;
 
-        Chicken* chicken = new Chicken(6*30);
+        Chicken *chicken = new Chicken(6 * 30);
         debiteBudget(chicken->getPurchasePrice());
 
         addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], chicken);
 
-    } else if (resForAnimal == '2'){
+    } else if (resForAnimal == '2') {
 
-        for (auto & i : listHabitat) {      // It's for verify if zoo has already a appropriate habitat
-            if (i->getAbility() == 10 ){
+        for (auto &i : listHabitat) {      // It's for verify if zoo has already a appropriate habitat
+            if (i->getAbility() == 10) {
                 break;
             }
         }
@@ -185,7 +207,12 @@ void Zoo::buyAnimal(){
 
         cin >> resForIndexOfHisHabitat;
 
-        Rooster* rooster = new Rooster(6*30);
+        if (listHabitat[resForIndexOfHisHabitat]->getTypeOfAnimal() != "Chicken") {
+                cout << "The new habitat isn't appropriated." << endl;
+                return;
+        }
+
+        Rooster *rooster = new Rooster(6 * 30);
         debiteBudget(rooster->getPurchasePrice());
 
         addAnimalInsideHabitat(listHabitat[resForIndexOfHisHabitat], rooster);
@@ -201,11 +228,11 @@ void Zoo::buyAnimal(){
         cin >> resForAge;
         int age = 0;
 
-        if (resForAge == '1'){
-            age = 6 *60;
-        } else if ( resForAnimal == '2'){
+        if (resForAge == '1') {
+            age = 6 * 60;
+        } else if (resForAnimal == '2') {
             age = 4 * 365;
-        } else if ( resForAnimal == '3'){
+        } else if (resForAnimal == '3') {
             age = 14 * 365;
         }
 
@@ -218,7 +245,7 @@ void Zoo::buyAnimal(){
 
 
         if (resForAnimal == '3') {
-            if (resForSex == 'F'){
+            if (resForSex == 'F') {
 
                 cout << "ses habitats" << endl; // TODO Lakhdar
                 cout << "Choose witch habitat would you take." << endl; // TODO Lakhdar
@@ -226,7 +253,12 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                TigerF* tigerF = new TigerF(age);
+                if (listHabitat[resForIndexOfHisHabitat]->getTypeOfAnimal() != "Tigre") {
+                    cout << "The new habitat isn't appropriated." << endl;
+                    return;
+                }
+
+                TigerF *tigerF = new TigerF(age);
                 tigerF->updateAnimal();
                 debiteBudget(tigerF->getPurchasePrice());
 
@@ -239,7 +271,12 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                TigerM* tigerM = new TigerM(age);
+                if (listHabitat[resForIndexOfHisHabitat]->getTypeOfAnimal() != "Tigre") {
+                    cout << "The new habitat isn't appropriated." << endl;
+                    return;
+                }
+
+                TigerM *tigerM = new TigerM(age);
                 tigerM->updateAnimal();
                 debiteBudget(tigerM->getPurchasePrice());
 
@@ -247,7 +284,7 @@ void Zoo::buyAnimal(){
 
             }
         } else {
-            if (resForSex == 'F'){
+            if (resForSex == 'F') {
 
                 cout << "ses habitats" << endl; // TODO Lakhdar
                 cout << "Choose witch habitat would you take." << endl; // TODO Lakhdar
@@ -255,7 +292,12 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                EagleF* eagleF = new EagleF(age);
+                if (listHabitat[resForIndexOfHisHabitat]->getTypeOfAnimal() != "Eagle") {
+                    cout << "The new habitat isn't appropriated." << endl;
+                    return;
+                }
+
+                EagleF *eagleF = new EagleF(age);
                 eagleF->updateAnimal();
                 debiteBudget(eagleF->getPurchasePrice());
 
@@ -268,7 +310,12 @@ void Zoo::buyAnimal(){
                 char resForIndexOfHisHabitat = ' ';
                 cin >> resForIndexOfHisHabitat;
 
-                EagleM* eagleM = new EagleM(age);
+                if (listHabitat[resForIndexOfHisHabitat]->getTypeOfAnimal() != "Eagle") {
+                    cout << "The new habitat isn't appropriated." << endl;
+                    return;
+                }
+
+                EagleM *eagleM = new EagleM(age);
                 eagleM->updateAnimal();
                 debiteBudget(eagleM->getPurchasePrice());
 
@@ -280,13 +327,51 @@ void Zoo::buyAnimal(){
 
     }
 }
-void Zoo::sellAnimal(int indexOfHabitat, int indexOfAnimal){
 
-    IHabitat* habitat = listHabitat.at(indexOfHabitat);
-    IAnimal* animal = habitat->getAnimalsInside().at(indexOfAnimal);
+void Zoo::sellAnimal(int indexOfHabitat, int indexOfAnimal) {
+
+    IHabitat *habitat = listHabitat.at(indexOfHabitat);
+    IAnimal *animal = habitat->getAnimalsInside().at(indexOfAnimal);
 
     creditBudget(animal->getSellingPrice());
     habitat->deleteAnimalInside(indexOfAnimal);
 }
 
+void Zoo::childbirth(int indexOfHabitat, IAnimal* animal, int percentInfantMortality){
+    if (rand() % 100 + 1 > percentInfantMortality){
 
+        if (animal->getTypeAnimal() == "Chicken"){
+            if (rand() % 2 == 0){
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new Chicken);
+            } else{
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new Rooster);
+            }
+        } else if (animal->getTypeAnimal() == "TigerF"){
+            if (rand() % 2 == 0){
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new TigerF);
+            } else{
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new TigerM);
+            }
+        } else if (animal->getTypeAnimal() == "EagleF"){
+            if (rand() % 2 == 0){
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new EagleF);
+            } else{
+                addAnimalInsideHabitat(listHabitat[indexOfHabitat], new EagleM);
+            }
+        }
+    } else{
+        cout << "Child dead born." << endl; //TODO Lakhdar
+    }
+}
+
+void Zoo::oneDayHasPassed() {
+    for (int i = 0; i < listHabitat.size();++i){
+        listHabitat[i]->oneDayHasPassed(this,i);
+    }
+}
+
+void Zoo::oneMonthHasPassed() {
+    for (int i = 0; i < listHabitat.size();++i){
+        listHabitat[i]->oneMonthHasPassed(date);
+    }
+}

@@ -9,7 +9,8 @@
 #include <IHabitat.h>
 
 class EagleHabitat : public IHabitat{
-
+public:
+    EagleHabitat();
 };
 
 
