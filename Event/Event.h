@@ -12,7 +12,7 @@ class Event {
 
 public:
     void Steal(const vector<IAnimal *>& listAnimals);
-    void Fire(const vector<IAnimal *>& animalsInside);
+    void Fire(int ,Zoo* );
     int RottenMeat(int totalMeat);
     int Harmful(int totalSeeds);
     void ProbabilityEvent(Zoo*);

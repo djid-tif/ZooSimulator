@@ -14,10 +14,8 @@ void Event::Steal(const vector<IAnimal *> &listAnimals) {
     delete listAnimals[1];
 }
 
-void Event::Fire(const vector<IAnimal *> &animalsInside) {
-    for (int i = 0; i < animalsInside.size(); ++i) {
-        delete animalsInside[i];
-    }
+void Event::Fire(int indexOfHabitat,Zoo* zoo) {
+    zoo->deleteHabitat(indexOfHabitat)
 }
 
 int Event::RottenMeat(int totalMeat) {
@@ -39,7 +37,7 @@ void Event::ProbabilityEvent(Zoo* zoo) {
             }
             case 1: {
                 if (random == 1) {
-//               Fire(RAPH MISSION);
+               Fire( (rand() % zoo.getListHabitat.size()), zoo);
                 }
             }
             case 2: {
