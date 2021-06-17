@@ -2,7 +2,7 @@
 // Created by Raphael Arabeyre on 03/06/2021.
 //
 
-#include "EagleF.h"
+#include "./EagleF.h"
 
 EagleF::EagleF() {
     age = 0;

@@ -15,7 +15,7 @@ Chicken::Chicken() {
     purchasePrice = 20;
     sellingPrice = 10;
     numberOfVisitorsPerMonthOfHighSeason = 2;
-    numberOfVisitorsPerMonthOfLowSeason = 0.5;
+    numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
     typeAnimal = "Chicken";
 

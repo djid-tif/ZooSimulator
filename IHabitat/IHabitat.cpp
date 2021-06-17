@@ -2,7 +2,7 @@
 // Created by Raphael Arabeyre on 04/06/2021.
 //
 
-#include "IHabitat.h"
+#include "./IHabitat.h"
 
  vector<IAnimal *> IHabitat::getAnimalsInside() const {
     return animalsInside;
@@ -43,19 +43,24 @@ void IHabitat::deleteAnimalInside(int indexOfAnimal){
 }
 
 IHabitat::~IHabitat() {
-    for (auto & i : animalsInside) {   //TODO: when IHabitat has deleted, animals inside hasn't deleted, and i do no why ?
+    for (auto  i : animalsInside) {   //TODO: when IHabitat has deleted, animals inside hasn't deleted, and i do no why ?
         delete i;
     }
 }
 
-void IHabitat::oneDayHasPassed(Zoo* zoo, int indexOfHabitat) {
+void IHabitat::oneDayHasPassed(int indexOfHabitat) {
 
     bool oneFemale = false;
     bool oneMale = false;
 
     for (int i =0; i < animalsInside.size(); ++i){
-        animalsInside[i]->oneDaysHasPassed(zoo, indexOfHabitat, i);
+        animalsInside[i]->oneDaysHasPassed(indexOfHabitat, i);
+        if (animalsInside[i]->isChildBirth()){
+            childBirth(animalsInside[i]);
+        }
     }
+
+
 
     for (auto &animal : animalsInside){
         if (animal->isHungry() || !animal->isCanReproduce() || !animal->isAdaptedToHisHabitat() || !animal->isReproductiveCapacity() || animal->isSick()){
@@ -77,10 +82,10 @@ void IHabitat::oneDayHasPassed(Zoo* zoo, int indexOfHabitat) {
 
 }
 
-void IHabitat::oneMonthHasPassed(int date, Zoo* zoo) {
+void IHabitat::oneMonthHasPassed() {
 
     for (auto &animal : animalsInside){
-        animal->oneMonthHasPassed(date, zoo);
+        animal->oneMonthHasPassed();
     }
 
 }
@@ -88,4 +93,46 @@ void IHabitat::oneMonthHasPassed(int date, Zoo* zoo) {
 string IHabitat::getTypeOfAnimal() const {
     return typeOfAnimal;
 }
+
+void IHabitat::buyAnimal(string animal, int age) {
+    if (animal == "Chicken"){
+        addAnimalInThis(new Chicken(age));
+    } else if (animal == "Rooster"){
+        addAnimalInThis(new Rooster(age));
+    } else if (animal == "EagleF"){
+        addAnimalInThis(new EagleF(age));
+    }else if (animal == "EagleM"){
+        addAnimalInThis(new EagleM(age));
+    }else if (animal == "TigerF"){
+        addAnimalInThis(new TigerF(age));
+    }else if (animal == "TigerM"){
+        addAnimalInThis(new TigerM(age));
+    }
+}
+
+void IHabitat::childBirth(IAnimal* animal) {
+    if (animal->getTypeAnimal() == "Chicken"){
+        if (rand() < 50){
+            addAnimalInThis(new Chicken);
+        } else {
+            addAnimalInThis(new Rooster);
+        }
+    } else if (animal->getTypeAnimal() == "EagleF"){
+        if (rand() < 50){
+            addAnimalInThis(new EagleM);
+        } else{
+            addAnimalInThis(new EagleF);
+        }
+    } else if (animal->getTypeAnimal() == "TigerF"){
+        if (rand() < 50){
+            addAnimalInThis(new TigerM);
+        } else {
+            addAnimalInThis(new TigerF);
+        }
+    }
+
+    animal->setChildBirth(false);
+}
+
+
 

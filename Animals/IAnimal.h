@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <string>
-#include <Zoo.h>
 
 using namespace std;
 
@@ -35,14 +34,17 @@ protected:
     bool canReproduce = false;
     bool hungry = false;
     bool pregnant = false;
+    bool dead = false;
+    bool childBirth = false;
+
     int pregnantCount = 0;
     int dayReFertilization;
     int countDayReFertilization = 0;
 
 public:
-    ~IAnimal();
-    void oneDaysHasPassed(Zoo*,int indexHabitat,int indexAnimal);
-    void oneMonthHasPassed(int date, Zoo*);
+    virtual ~IAnimal();
+    void oneDaysHasPassed(int indexHabitat,int indexAnimal);
+    void oneMonthHasPassed();
 
 
     int getAge() const;
@@ -67,9 +69,15 @@ public:
     bool isAdaptedToHisHabitat() const;
     bool isCanReproduce() const;
     bool isHungry() const;
+    bool isDead() const;
+    bool isPregnant() const;
+    bool isChildBirth() const;
 
-    virtual reproduction();
-    virtual oneDayOfPregnant();
+    virtual void reproduction();
+    virtual void oneDayOfPregnant(int indexOfHabitat);
+
+    void setChildBirth(bool childBirth);
+
 
 };
 

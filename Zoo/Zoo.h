@@ -10,15 +10,15 @@
 #include <cstdlib>
 #include <Seed.h>
 #include <Meat.h>
-#include <IHabitat.h>
-#include <ChickenCoop.h>
-#include <TigerHabitat.h>
-#include <EagleHabitat.h>
+
+#include "IHabitat.h"
+
 
 using namespace std;
 
 
 class IAnimal;
+class IHabitat;
 class IFood;
 
 class Zoo {
@@ -52,15 +52,13 @@ public:
 
     void buyHabitat();
     void addHabitat(IHabitat *);
-    void sellHabitat(int indexOfHabitat);
+    void sellHabitat();
 
     void addAnimalInsideHabitat(IHabitat *habitat, IAnimal *aninal);
     void moveAnAnimal(int indexOfOldHabitat, int indexOfAnimalInOldHabitat, int indexOfNewHabitat);
     void buyAnimal();
+    void sellAnimal();
 
-    void sellAnimal(int indexOfHabitat, int indexOfAnimal);
-
-    void childbirth(int indexOfHabitat,IAnimal*, int percentInfantMortality);
 
     void oneDayHasPassed();
     void oneMonthHasPassed();

@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_FEMALE_H
 
 
-#include <IAnimal.h>
+#include "../IAnimal.h"
 
 class Female : public IAnimal{
 
@@ -24,7 +24,7 @@ public:
 
 public:
     void reproduction();
-    void oneDayOfPregnant(Zoo*, int indexOfHabitat);
+    void oneDayOfPregnant( int indexOfHabitat);
 };
 
 

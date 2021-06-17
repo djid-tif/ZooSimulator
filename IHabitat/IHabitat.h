@@ -6,11 +6,21 @@
 #define ZOOSIMULATOR_IHABITAT_H
 
 
-#include <IAnimal.h>
 #include <iostream>
+#include <string>
 #include <vector>
+#include "IAnimal.h"
+#include "Chicken.h"
+#include "Rooster.h"
+#include "TigerF.h"
+#include "TigerM.h"
+#include "EagleF.h"
+#include "EagleM.h"
+
+using namespace std;
 
 class IHabitat {
+
 
 protected:
     vector<IAnimal*> animalsInside;
@@ -35,9 +45,12 @@ public:
     void addAnimalInThis(IAnimal*);
     void eraseAnimalInside(int index);
     void deleteAnimalInside(int indexOfAnimal);
+    void buyAnimal(string animal, int age);
+    void childBirth(IAnimal*);
 
-    void oneDayHasPassed(Zoo*, int indexHabitat);
-    void oneMonthHasPassed(int date,Zoo*);
+    void oneMonthHasPassed();
+
+    void oneDayHasPassed(int indexOfHabitat);
 };
 
 

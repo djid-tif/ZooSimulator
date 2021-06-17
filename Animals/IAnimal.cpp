@@ -2,12 +2,12 @@
 // Created by raphou le bg on 03/06/2021.
 //
 
-#include "IAnimal.h"
+#include "./IAnimal.h"
 
 
-IAnimal::~IAnimal() = default;
+IAnimal::~IAnimal() = default;;
 
-void IAnimal::oneDaysHasPassed(Zoo* zoo,int indexOfHabitat, int indexOfAnimal) {
+void IAnimal::oneDaysHasPassed(int indexOfHabitat, int indexOfAnimal) {
 
     if (age == ageToSexualMaturity){
         reproductiveCapacity = true;
@@ -41,7 +41,7 @@ void IAnimal::oneDaysHasPassed(Zoo* zoo,int indexOfHabitat, int indexOfAnimal) {
     }
 
     if (pregnant){
-        oneDayOfPregnant(zoo, indexOfHabitat);
+        oneDayOfPregnant(indexOfHabitat);
     }
 
     if (countDayReFertilization != 0){
@@ -56,21 +56,12 @@ void IAnimal::oneDaysHasPassed(Zoo* zoo,int indexOfHabitat, int indexOfAnimal) {
 
     if (age == lifeExperience){
         cout << "Animal dead of old age." << endl;
-        zoo->getListHabitat().at(indexOfHabitat)->deleteAnimalInside(indexOfAnimal);
+        dead = true;
     }
 }
 
-void IAnimal::oneMonthHasPassed(int date, Zoo* zoo) {
+void IAnimal::oneMonthHasPassed() {
     adaptedToHisHabitat = true;
-    if (!sick) {
-        if (date % 12 * 30 > 5 * 30 && date % 12 * 30 < 9 * 30) {
-            zoo->creditBudget(
-                    numberOfVisitorsPerMonthOfHighSeason * 2 * 17 + numberOfVisitorsPerMonthOfHighSeason * 2 * 13);
-        } else {
-            zoo->creditBudget(
-                    numberOfVisitorsPerMonthOfLowSeason * 2 * 17 + numberOfVisitorsPerMonthOfLowSeason * 2 * 13);
-        }
-    }
 }
 
 int IAnimal::getAge() const {
@@ -151,6 +142,30 @@ bool IAnimal::isCanReproduce() const {
 
 bool IAnimal::isHungry() const {
     return hungry;
+}
+
+bool IAnimal::isPregnant() const {
+    return pregnant;
+}
+
+bool IAnimal::isDead() const {
+    return dead;
+}
+
+bool IAnimal::isChildBirth() const {
+    return childBirth;
+}
+
+void IAnimal::setChildBirth(bool childBirth) {
+    IAnimal::childBirth = childBirth;
+}
+
+void IAnimal::reproduction() {
+
+}
+
+void IAnimal::oneDayOfPregnant(int indexOfHabitat) {
+
 }
 
 

@@ -6,10 +6,11 @@
 #define ZOOSIMULATOR_EAGLEM_H
 
 
-#include <Male.h>
+#include "./Male.h"
 
 class EagleM : public Male {
 
+    class IAnimal;
 
     IAnimal* partner;
 

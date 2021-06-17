@@ -4,18 +4,19 @@
 
 #include "Female.h"
 
+
 void Female::reproduction() {
     canReproduce = false;
     pregnant = true;
     pregnantCount = gestationTime;
 }
 
-void Female::oneDayOfPregnant(Zoo* zoo, int indexOfHabitat) {
+void Female::oneDayOfPregnant(int indexOfHabitat) {
     pregnantCount--;
     if (pregnantCount == 0){
         pregnant = false;
         countDayReFertilization = dayReFertilization;
-        zoo->childbirth(indexOfHabitat, this, percentInfantMortality);
+        childBirth = true;
     }
 }
 

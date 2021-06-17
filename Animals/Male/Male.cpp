@@ -8,5 +8,6 @@ void Male::reproduction() {
 
 }
 
-void Male::oneDayOfPregnant() {
+void Male::oneDayOfPregnant(int indexOfHabitat) {
+
 }

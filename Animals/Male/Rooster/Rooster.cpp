@@ -32,8 +32,12 @@ Rooster::Rooster(int ageSet) {
     purchasePrice = 100;
     sellingPrice = 20;
     numberOfVisitorsPerMonthOfHighSeason = 2;
-    numberOfVisitorsPerMonthOfLowSeason = 0.5;
+    numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
     typeAnimal = "Rooster";
+
+}
+
+void Rooster::updateAnimal() {
 
 }
