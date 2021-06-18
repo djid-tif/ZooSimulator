@@ -3,11 +3,8 @@
 //
 
 #include <iostream>
-#include "Zoo.h"
-#include "IHabitat.h"
-#include "ChickenCoop.h"
-#include "TigerHabitat.h"
-#include "EagleHabitat.h"
+#include "./Zoo.h"
+
 
 
 

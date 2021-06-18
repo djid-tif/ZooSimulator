@@ -9,13 +9,20 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "IAnimal.h"
-#include "Chicken.h"
-#include "Rooster.h"
-#include "TigerF.h"
-#include "TigerM.h"
-#include "EagleF.h"
-#include "EagleM.h"
+#include "../Animals/IAnimal.h"
+#include "../Animals/IAnimal.cpp"
+#include "../Animals/Female/Chicken/Chicken.h"
+#include "../Animals/Female/Chicken/Chicken.cpp"
+#include "../Animals/Male/Rooster/Rooster.h"
+#include "../Animals/Male/Rooster/Rooster.cpp"
+#include "../Animals/Female/TigerF/TigerF.h"
+#include "../Animals/Female/TigerF/TigerF.cpp"
+#include "../Animals/Male/TigerM/TigerM.h"
+#include "../Animals/Male/TigerM/TigerM.cpp"
+#include "../Animals/Female/EagleF/EagleF.h"
+#include "../Animals/Female/EagleF/EagleF.cpp"
+#include "../Animals/Male/EagleM/EagleM.h"
+#include "../Animals/Male/EagleM/EagleM.cpp"
 
 using namespace std;
 

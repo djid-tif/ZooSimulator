@@ -2,7 +2,7 @@
 // Created by Raphael Arabeyre on 03/06/2021.
 //
 
-#include "Chicken.h"
+#include "./Chicken.h"
 
 Chicken::Chicken() {
     age = 0;

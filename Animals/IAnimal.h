@@ -26,25 +26,26 @@ protected:
     int numberOfVisitorsPerMonthOfLowSeason;
     int annualGrant;
     string typeAnimal;
-    bool reproductiveCapacity = false;
-    bool sick = false;
-    int sickCount = 0;
-    int countOfDayNoEating = 0;
-    bool adaptedToHisHabitat = false;
-    bool canReproduce = false;
-    bool hungry = false;
-    bool pregnant = false;
-    bool dead = false;
-    bool childBirth = false;
-
-    int pregnantCount = 0;
+    bool reproductiveCapacity;
+    bool sick;
+    int  sickCount;
+    int  countOfDayNoEating;
+    bool adaptedToHisHabitat;
+    bool canReproduce;
+    bool hungry;
+    bool pregnant;
+    bool dead;
+    bool childBirth;
+    int pregnantCount;
+    int countDayReFertilization;
     int dayReFertilization;
-    int countDayReFertilization = 0;
 
 public:
+    IAnimal();
     virtual ~IAnimal();
     void oneDaysHasPassed(int indexHabitat,int indexAnimal);
     void oneMonthHasPassed();
+
 
 
     int getAge() const;
@@ -73,8 +74,8 @@ public:
     bool isPregnant() const;
     bool isChildBirth() const;
 
-    virtual void reproduction();
-    virtual void oneDayOfPregnant(int indexOfHabitat);
+    void reproduction();
+    void oneDayOfPregnant(int indexOfHabitat);
 
     void setChildBirth(bool childBirth);
 

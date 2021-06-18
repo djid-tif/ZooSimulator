@@ -5,7 +5,9 @@
 #include "./IAnimal.h"
 
 
-IAnimal::~IAnimal() = default;;
+IAnimal::~IAnimal() {
+
+};
 
 void IAnimal::oneDaysHasPassed(int indexOfHabitat, int indexOfAnimal) {
 
@@ -166,6 +168,21 @@ void IAnimal::reproduction() {
 
 void IAnimal::oneDayOfPregnant(int indexOfHabitat) {
 
+}
+
+IAnimal::IAnimal() {
+    reproductiveCapacity = false;
+    sick = false;
+    sickCount = 0;
+    countOfDayNoEating = 0;
+    adaptedToHisHabitat = false;
+    canReproduce = false;
+    hungry = false;
+    pregnant = false;
+    dead = false;
+    childBirth = false;
+    pregnantCount = 0;
+    countDayReFertilization = 0;
 }
 
 

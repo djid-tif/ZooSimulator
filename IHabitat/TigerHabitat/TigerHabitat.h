@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_TIGERHABITAT_H
 
 
-#include <IHabitat.h>
+#include "../IHabitat.h"
 
 class TigerHabitat : public IHabitat{
 public:

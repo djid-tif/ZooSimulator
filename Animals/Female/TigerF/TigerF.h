@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_TIGERF_H
 
 
-#include <Female.h>
+#include "../Female.h"
 
 class TigerF :public Female{
 

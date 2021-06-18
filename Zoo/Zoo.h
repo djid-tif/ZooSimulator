@@ -8,10 +8,19 @@
 #include <vector>
 #include <string>
 #include <cstdlib>
-#include <Seed.h>
-#include <Meat.h>
+#include "../food/Seed.h"
+#include "../food/Seed.cpp"
+#include "../food/Meat.h"
+#include "../food/Meat.cpp"
 
-#include "IHabitat.h"
+#include "../IHabitat/IHabitat.h"
+#include "../IHabitat/IHabitat.cpp"
+#include "../IHabitat/ChickenCoop/ChickenCoop.h"
+#include "../IHabitat/ChickenCoop/ChickenCoop.cpp"
+#include "../IHabitat/TigerHabitat/TigerHabitat.h"
+#include "../IHabitat/TigerHabitat/TigerHabitat.cpp"
+#include "../IHabitat/EagleHabitat/EagleHabitat.h"
+#include "../IHabitat/EagleHabitat/EagleHabitat.cpp"
 
 
 using namespace std;

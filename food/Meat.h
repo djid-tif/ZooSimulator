@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_MEAT_H
 
 
-#include "IFood.h"
+#include "./IFood.h"
 
 class Meat: public IFood {
 

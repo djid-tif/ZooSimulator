@@ -6,7 +6,7 @@
 #define ZOOSIMULATOR_ROOSTER_H
 
 
-#include "Male.h"
+#include "../Male.h"
 
 class Rooster : public Male{
 public:

@@ -1,6 +1,7 @@
 #include <iostream>
 
-#include "Zoo.h"
+#include "./zoo/Zoo.h"
+#include "./zoo/Zoo.cpp"
 
 
 using namespace std;

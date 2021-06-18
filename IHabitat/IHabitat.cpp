@@ -43,8 +43,8 @@ void IHabitat::deleteAnimalInside(int indexOfAnimal){
 }
 
 IHabitat::~IHabitat() {
-    for (auto  i : animalsInside) {   //TODO: when IHabitat has deleted, animals inside hasn't deleted, and i do no why ?
-        delete i;
+    for (int i = 0; i < animalsInside.size();i++) {
+        delete animalsInside[i];
     }
 }
 
@@ -62,21 +62,21 @@ void IHabitat::oneDayHasPassed(int indexOfHabitat) {
 
 
 
-    for (auto &animal : animalsInside){
-        if (animal->isHungry() || !animal->isCanReproduce() || !animal->isAdaptedToHisHabitat() || !animal->isReproductiveCapacity() || animal->isSick()){
+    for (int i = 0; i < animalsInside.size();++i){
+        if (animalsInside[i]->isHungry() || !animalsInside[i]->isCanReproduce() || !animalsInside[i]->isAdaptedToHisHabitat() || !animalsInside[i]->isReproductiveCapacity() || animalsInside[i]->isSick()){
             return;
         }
 
-        if (animal->getTypeAnimal() == "Chicken" || animal->getTypeAnimal() == "TigerF" || animal->getTypeAnimal() == "EagleF"){
+        if (animalsInside[i]->getTypeAnimal() == "Chicken" || animalsInside[i]->getTypeAnimal() == "TigerF" || animalsInside[i]->getTypeAnimal() == "EagleF"){
             oneFemale = true;
-        } else if (animal->getTypeAnimal() == "Rooster" || animal->getTypeAnimal() == "TigerM" || animal->getTypeAnimal() == "EagleM") {
+        } else if (animalsInside[i]->getTypeAnimal() == "Rooster" || animalsInside[i]->getTypeAnimal() == "TigerM" || animalsInside[i]->getTypeAnimal() == "EagleM") {
             oneMale = true;
         }
     }
 
     if (oneFemale && oneMale) {
-        for (auto &animal : animalsInside) {
-            animal->reproduction();
+        for (int i = 0; i < animalsInside.size(); ++i) {
+            animalsInside[i]->reproduction();
         }
     }
 
@@ -84,8 +84,8 @@ void IHabitat::oneDayHasPassed(int indexOfHabitat) {
 
 void IHabitat::oneMonthHasPassed() {
 
-    for (auto &animal : animalsInside){
-        animal->oneMonthHasPassed();
+    for (int i = 0; i < animalsInside.size(); ++i) {
+        animalsInside[i]->oneMonthHasPassed();
     }
 
 }
