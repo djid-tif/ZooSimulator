@@ -9,18 +9,18 @@
 #include <string>
 #include <cstdlib>
 #include "../food/Seed.h"
-//#include "../food/Seed.cpp"
+#include "../food/Seed.cpp"
 #include "../food/Meat.h"
-//#include "../food/Meat.cpp"
+#include "../food/Meat.cpp"
 
 #include "../IHabitat/IHabitat.h"
-//#include "../IHabitat/IHabitat.cpp"
+#include "../IHabitat/IHabitat.cpp"
 #include "../IHabitat/ChickenCoop/ChickenCoop.h"
-//#include "../IHabitat/ChickenCoop/ChickenCoop.cpp"
+#include "../IHabitat/ChickenCoop/ChickenCoop.cpp"
 #include "../IHabitat/TigerHabitat/TigerHabitat.h"
-//#include "../IHabitat/TigerHabitat/TigerHabitat.cpp"
+#include "../IHabitat/TigerHabitat/TigerHabitat.cpp"
 #include "../IHabitat/EagleHabitat/EagleHabitat.h"
-//#include "../IHabitat/EagleHabitat/EagleHabitat.cpp"
+#include "../IHabitat/EagleHabitat/EagleHabitat.cpp"
 
 
 using namespace std;
