@@ -185,7 +185,11 @@ void Zoo::buyAnimal() {
         cin >> resForIndexOfHisHabitat;
 
         if (debiteBudget(20)){
-            listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Chicken",6*30);
+            if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Chicken"){
+                listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Chicken",6*30);
+            } else {
+                cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+            }
         }
 
     } else if (resForAnimal == 2) {
@@ -198,7 +202,11 @@ void Zoo::buyAnimal() {
         cin >> resForIndexOfHisHabitat;
 
         if (debiteBudget(100)){
+            if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Chicken"){
             listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Rooster",6*30);
+            } else {
+                cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+            }
         }
 
     } else {
@@ -248,7 +256,11 @@ void Zoo::buyAnimal() {
                 }
 
                 if (enoughBudget){
+                    if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Tiger"){
                     listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerF",age);
+                    } else {
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                    }
                 }
 
             } else {
@@ -270,7 +282,11 @@ void Zoo::buyAnimal() {
                 }
 
                 if (enoughBudget){
-                    listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerM",age);
+                    if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Tiger"){
+                        listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerM",age);
+                    } else {
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                    }
                 }
 
             }
@@ -294,7 +310,11 @@ void Zoo::buyAnimal() {
                 }
 
                 if (enoughBudget){
+                    if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Eagle"){
                     listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleF",age);
+                    } else {
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                    }
                 }
 
             } else {
@@ -316,7 +336,11 @@ void Zoo::buyAnimal() {
                 }
 
                 if (enoughBudget){
+                    if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Eagle"){
                     listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleM",age);
+                    } else {
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                    }
                 }
 
             }
