@@ -24,7 +24,7 @@ EagleF::EagleF() {
     percentInfantMortality = 50;
     dayReFertilization = 350;
 
-    partner = nullptr;
+//    partner = nullptr;
 }
 
 EagleF::EagleF(int ageSet) {
@@ -47,7 +47,7 @@ EagleF::EagleF(int ageSet) {
     percentInfantMortality = 50;
     dayReFertilization = 350;
 
-    partner = nullptr;
+//    partner = nullptr;
 }
 
 

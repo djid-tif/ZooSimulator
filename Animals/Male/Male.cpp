@@ -5,9 +5,9 @@
 #include "./Male.h"
 
 void Male::reproduction() {
-    return;
+    return void();
 }
 
 void Male::oneDayOfPregnant(int indexOfHabitat) {
-    return;
+    return void();
 }

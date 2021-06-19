@@ -14,7 +14,6 @@ public:
     Chicken(int);
 
     void updateAnimal();
-
 };
 
 

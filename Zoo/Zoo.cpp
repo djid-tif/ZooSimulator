@@ -8,8 +8,6 @@
 
 
 
-using namespace std;
-
 Zoo::Zoo() {
     budget = 80000;
 }
@@ -40,9 +38,7 @@ bool Zoo::debiteBudget(uint debite) {
     }
 }
 
-void Zoo::addAnimal(IAnimal *animal) { // TODO Update RAPHAEL
-    listAnimals.push_back(animal);
-}
+
 
 void Zoo::buyFood(int seed, int meat) {
     m_seed.addSeeds(seed);
@@ -69,22 +65,23 @@ void Zoo::buyHabitat() {
     cout << "       Tiger habitat ? (2'000€)    (press 2)" << endl; //TODO Lakhdar
     cout << "       Eagle habitat ? (2'000€)    (press 3)" << endl; //TODO Lakhdar
 
-    char res = ' ';                                                 //TODO Lakhdar
+    int r = 0;                                                 //TODO Lakhdar
 
-    cin >> res;
+    cin >> r;
 
-    if (res == '1') {
-        ChickenCoop chickenCoop;
-        addHabitat(&chickenCoop);
-        debiteBudget(chickenCoop.getPurchasePrice());
-    } else if (res == '2') {
-        TigerHabitat tigerHabitat;
-        addHabitat(&tigerHabitat);
-        debiteBudget(tigerHabitat.getPurchasePrice());
-    } else if (res == '3') {
-        EagleHabitat eagleHabitat;
-        addHabitat(&eagleHabitat);
-        debiteBudget(eagleHabitat.getPurchasePrice());
+
+    if (r == 1) {
+        if (debiteBudget(300)){
+            addHabitat(new ChickenCoop);
+        }
+    } else if (r == 2) {
+        if (debiteBudget(2000)){
+            addHabitat(new TigerHabitat);
+        }
+    } else if (r == 3) {
+        if (debiteBudget(2000)){
+            addHabitat(new EagleHabitat);
+        }
     }
 }
 
@@ -187,9 +184,9 @@ void Zoo::buyAnimal() {
 
         cin >> resForIndexOfHisHabitat;
 
-        debiteBudget(20);
-
-        listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Chicken",6*30);
+        if (debiteBudget(20)){
+            listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Chicken",6*30);
+        }
 
     } else if (resForAnimal == 2) {
 
@@ -200,9 +197,9 @@ void Zoo::buyAnimal() {
 
         cin >> resForIndexOfHisHabitat;
 
-        debiteBudget(100);
-
-        listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Rooster",6*30);
+        if (debiteBudget(100)){
+            listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Rooster",6*30);
+        }
 
     } else {
 
@@ -232,7 +229,7 @@ void Zoo::buyAnimal() {
 
 
         if (resForAnimal == 3) {
-            if (resForSex == 'F') {
+            if (resForSex == 'F' || resForSex == 'f' ) {
 
                 cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
                 cout << "Selectionner un habitat" << endl; // TODO Lakhdar
@@ -241,15 +238,18 @@ void Zoo::buyAnimal() {
 
                 cin >> resForIndexOfHisHabitat;
 
+                bool enoughBudget = true;
                 if (resForAge == 1) {
-                    debiteBudget(3000);
+                    enoughBudget = debiteBudget(3000);
                 } else if (resForAge == 2) {
-                    debiteBudget(120000);
+                    enoughBudget = debiteBudget(120000);
                 } else if (resForAge == 3) {
-                    debiteBudget(60000);
+                    enoughBudget = debiteBudget(60000);
                 }
 
-                listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerF",age);
+                if (enoughBudget){
+                    listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerF",age);
+                }
 
             } else {
 
@@ -260,15 +260,18 @@ void Zoo::buyAnimal() {
 
                 cin >> resForIndexOfHisHabitat;
 
+                bool enoughBudget = true;
                 if (resForAge == 1) {
-                    debiteBudget(3000);
+                    enoughBudget = debiteBudget(3000);
                 } else if (resForAge == 2) {
-                    debiteBudget(120000);
+                    enoughBudget = debiteBudget(120000);
                 } else if (resForAge == 3) {
-                    debiteBudget(60000);
+                    enoughBudget = debiteBudget(60000);
                 }
 
-                listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerM",age);
+                if (enoughBudget){
+                    listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerM",age);
+                }
 
             }
         } else {
@@ -281,15 +284,18 @@ void Zoo::buyAnimal() {
 
                 cin >> resForIndexOfHisHabitat;
 
+                bool enoughBudget = true;
                 if (resForAge == '1') {
-                    debiteBudget(1000);
+                    enoughBudget = debiteBudget(1000);
                 } else if (resForAnimal == '2') {
-                    debiteBudget(4000);
+                    enoughBudget = debiteBudget(4000);
                 } else if (resForAnimal == '3') {
-                    debiteBudget(2000);
+                    enoughBudget = debiteBudget(2000);
                 }
 
-                listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleF",age);
+                if (enoughBudget){
+                    listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleF",age);
+                }
 
             } else {
 
@@ -300,15 +306,18 @@ void Zoo::buyAnimal() {
 
                 cin >> resForIndexOfHisHabitat;
 
+                bool enoughBudget = true;
                 if (resForAge == '1') {
-                    debiteBudget(1000);
+                    enoughBudget = debiteBudget(1000);
                 } else if (resForAnimal == '2') {
-                    debiteBudget(4000);
+                    enoughBudget = debiteBudget(4000);
                 } else if (resForAnimal == '3') {
-                    debiteBudget(2000);
+                    enoughBudget = debiteBudget(2000);
                 }
 
-                listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleM",age);
+                if (enoughBudget){
+                    listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("EagleM",age);
+                }
 
             }
         }
@@ -364,7 +373,7 @@ void Zoo::oneMonthHasPassed() {
     for (int i = 0; i < listHabitat.size();++i){
         listHabitat[i]->oneMonthHasPassed();
 
-        for (int i2 = 0; i < listHabitat[i]->getAnimalsInside().size();++i2) {
+        for (int i2 = 0; i2 < listHabitat[i]->getAnimalsInside().size();++i2) {
             if (!listHabitat[i]->getAnimalsInside().at(i2)->isSick()) {
                 if (date % 12 * 30 > 5 * 30 && date % 12 * 30 < 9 * 30) {
                     creditBudget(

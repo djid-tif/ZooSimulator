@@ -95,10 +95,11 @@ string IHabitat::getTypeOfAnimal() const {
 }
 
 void IHabitat::buyAnimal(string animal, int age) {
-    if (animal == "Chicken"){
-        addAnimalInThis(new Chicken(age));
-    } else if (animal == "Rooster"){
+
+    if (animal == "Rooster"){
         addAnimalInThis(new Rooster(age));
+    } else if (animal == "Chicken"){
+        addAnimalInThis(new Chicken(age));
     } else if (animal == "EagleF"){
         addAnimalInThis(new EagleF(age));
     }else if (animal == "EagleM"){
@@ -133,6 +134,8 @@ void IHabitat::childBirth(IAnimal* animal) {
 
     animal->setChildBirth(false);
 }
+
+IHabitat::IHabitat() {}
 
 
 

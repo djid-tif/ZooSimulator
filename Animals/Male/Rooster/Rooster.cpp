@@ -35,7 +35,6 @@ Rooster::Rooster(int ageSet) {
     numberOfVisitorsPerMonthOfLowSeason = 1;
     annualGrant = 0;
     typeAnimal = "Rooster";
-
 }
 
 void Rooster::updateAnimal() {

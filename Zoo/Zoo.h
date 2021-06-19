@@ -9,33 +9,29 @@
 #include <string>
 #include <cstdlib>
 #include "../food/Seed.h"
-#include "../food/Seed.cpp"
+//#include "../food/Seed.cpp"
 #include "../food/Meat.h"
-#include "../food/Meat.cpp"
+//#include "../food/Meat.cpp"
 
 #include "../IHabitat/IHabitat.h"
-#include "../IHabitat/IHabitat.cpp"
+//#include "../IHabitat/IHabitat.cpp"
 #include "../IHabitat/ChickenCoop/ChickenCoop.h"
-#include "../IHabitat/ChickenCoop/ChickenCoop.cpp"
+//#include "../IHabitat/ChickenCoop/ChickenCoop.cpp"
 #include "../IHabitat/TigerHabitat/TigerHabitat.h"
-#include "../IHabitat/TigerHabitat/TigerHabitat.cpp"
+//#include "../IHabitat/TigerHabitat/TigerHabitat.cpp"
 #include "../IHabitat/EagleHabitat/EagleHabitat.h"
-#include "../IHabitat/EagleHabitat/EagleHabitat.cpp"
+//#include "../IHabitat/EagleHabitat/EagleHabitat.cpp"
 
 
 using namespace std;
 
 
-class IAnimal;
-class IHabitat;
-class IFood;
 
 class Zoo {
 
     int date;
 
     uint budget;
-    vector<IAnimal *> listAnimals;
     vector<IHabitat *> listHabitat;
     Seed m_seed;
     Meat m_meat;
@@ -50,8 +46,6 @@ public:
     uint getBudget() const;
     bool creditBudget(uint credit);
     bool debiteBudget(uint debite);
-
-    void addAnimal(IAnimal* animal);
 
     void buyFood(int seed, int meat);
     
