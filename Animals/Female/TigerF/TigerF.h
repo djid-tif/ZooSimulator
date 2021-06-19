@@ -6,14 +6,18 @@
 #define ZOOSIMULATOR_TIGERF_H
 
 
-#include <Female.h>
+#include "../Female.h"
 
 class TigerF :public Female{
+
 
     int waitingDayForNewLitter;
 
 public:
     TigerF();
+    TigerF(int ageSet);
+
+    void updateAnimal();
 };
 
 

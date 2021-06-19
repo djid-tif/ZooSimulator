@@ -2,25 +2,54 @@
 // Created by Raphael Arabeyre on 03/06/2021.
 //
 
-#include "EagleM.h"
+#include "./EagleM.h"
 
 EagleM::EagleM() {
+    age = 0;
     feed = "Meet";
     amountOfFoodToEaPerDay = 250;
     hungryDay = 10;
-    sexualMaturity = 4 * 365;
+    ageToSexualMaturity = 4 * 365;
     endOfReproduction = 14 * 365;
     lifeExperience = 25 * 365;
-    purchasePriceAt6Month = 1000;
-    sellingPriceAt6Month = 500;
-    purchasePriceAt4Year = 4000;
-    sellingPriceAt4Year = 2000;
-    purchasePriceAt14Year = 2000;
-    sellingPriceAt14Year = 400;
+    purchasePrice = 1000;
+    sellingPrice = 500;
     numberOfVisitorsPerMonthOfHighSeason = 15;
     numberOfVisitorsPerMonthOfLowSeason = 7;
     annualGrant = 2190;
+    typeAnimal = "EagleM";
 
     partner = nullptr;
+}
+
+
+EagleM::EagleM(int ageSet) {
+    age = ageSet;
+    feed = "Meet";
+    amountOfFoodToEaPerDay = 250;
+    hungryDay = 10;
+    ageToSexualMaturity = 4 * 365;
+    endOfReproduction = 14 * 365;
+    lifeExperience = 25 * 365;
+    purchasePrice = 1000;
+    sellingPrice = 500;
+    numberOfVisitorsPerMonthOfHighSeason = 15;
+    numberOfVisitorsPerMonthOfLowSeason = 7;
+    annualGrant = 2190;
+    typeAnimal = "EagleM";
+
+    partner = nullptr;
+}
+
+void EagleM::updateAnimal(){
+
+    if (age == 4*365){
+        purchasePrice = 4000;
+        sellingPrice = 2000;
+    } else if (age == 14*365){
+        purchasePrice = 2000;
+        sellingPrice = 400;
+    }
+
 }
 

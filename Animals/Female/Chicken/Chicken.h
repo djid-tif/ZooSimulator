@@ -6,11 +6,14 @@
 #define ZOOSIMULATOR_CHICKEN_H
 
 
-#include <Female.h>
+#include "../Female.h"
 
 class Chicken : public Female{
 public:
     Chicken();
+    Chicken(int);
+
+    void updateAnimal();
 };
 
 

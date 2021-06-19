@@ -6,11 +6,15 @@
 #define ZOOSIMULATOR_TIGERM_H
 
 
-#include <Male.h>
+#include "../Male.h"
 
 class TigerM :public Male{
 public:
     TigerM();
+
+    TigerM(int ageSet);
+
+    void updateAnimal();
 };
 
 

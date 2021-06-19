@@ -6,11 +6,13 @@
 #define ZOOSIMULATOR_MALE_H
 
 
-#include <IAnimal.h>
+#include "../IAnimal.h"
 
 class Male : public IAnimal{
 
-
+public:
+    void reproduction();
+    void oneDayOfPregnant( int indexOfHabitat);
 };
 
 

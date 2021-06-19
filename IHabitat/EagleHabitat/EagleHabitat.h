@@ -6,8 +6,11 @@
 #define ZOOSIMULATOR_EAGLEHABITAT_H
 
 
-class EagleHabitat {
+#include "../IHabitat.h"
 
+class EagleHabitat : public IHabitat{
+public:
+    EagleHabitat();
 };
 
 

@@ -6,7 +6,11 @@
 #define ZOOSIMULATOR_CHICKENCOOP_H
 
 
-class ChickenCoop {
+#include "../IHabitat.h"
+
+class ChickenCoop : public IHabitat{
+public:
+    ChickenCoop();
 
 };
 

@@ -6,14 +6,18 @@
 #define ZOOSIMULATOR_EAGLEF_H
 
 
-#include <Female.h>
+#include "../Female.h"
 
 class EagleF : public Female{
 
-    IAnimal* partner;
+
+//    IAnimal* partner;
 
 public:
     EagleF();
+    EagleF(int);
+
+    void updateAnimal();
 };
 
 

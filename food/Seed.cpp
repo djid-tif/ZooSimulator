@@ -2,7 +2,7 @@
 // Created by madjid on 03/06/2021.
 //
 
-#include "Seed.h"
+#include "./Seed.h"
 #include <iostream>
 
 using namespace std;
