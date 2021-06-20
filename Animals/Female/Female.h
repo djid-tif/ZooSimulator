@@ -24,7 +24,7 @@ public:
 
 public:
     void reproduction();
-    void oneDayOfPregnant( int indexOfHabitat);
+    void oneDayOfPregnant( int indexOfHabitat) override;
 };
 
 
