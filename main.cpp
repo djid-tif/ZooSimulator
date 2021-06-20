@@ -16,7 +16,6 @@ int main() {
     int date = 0;
 
     while (date < 120 * 360) {
-        GameManager::displayWelcome();
 
         cout << "argent :" << zoo->getBudget() << endl;
 
