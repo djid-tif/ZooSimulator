@@ -13,12 +13,16 @@ class GameManager {
 
 public:
     static void displayWelcome();
+    static void displayBudget(uint);
+    static void correctAnswer();
+    static int diplaywichHabitat();
     static int displayMenu();
     static bool yesOrNoQuestion();
     static int buyorSell();
     static int WichAnimal();
 
     static int howOld();
+
 };
 
 

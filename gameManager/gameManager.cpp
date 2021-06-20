@@ -16,6 +16,8 @@ void GameManager::displayWelcome() {
     cout << "+--------------------------------------+" << endl;
 }
 
+
+
 int GameManager::displayMenu() {
 
     string answer;
@@ -23,7 +25,7 @@ int GameManager::displayMenu() {
     cout << "+--------------------------------------+" << endl;
     cout << "|  what do you want to take care of ?  |" << endl;
     cout << "+--------------------------------------+" << endl;
-    cout << "|1 - Buy/Sell Animal               |" << endl;
+    cout << "|1 - Buy/Sell Animal                   |" << endl;
     cout << "|2 - Buy/sell Food                     |" << endl;
     cout << "|3 - Buy/sell habitat                  |" << endl;
     cout << "|4 - Next Mouth                        |" << endl;
@@ -54,7 +56,7 @@ int GameManager::buyorSell() {
     cin >> answer;
 
     while (answer != "1" && answer != "2") {
-        cout << "chose 1, 2, 3 or 4 : ";
+        cout << "chose 1 or 2 : ";
         cin >> answer;
     }
 
@@ -135,6 +137,70 @@ bool GameManager::yesOrNoQuestion() {
     return (answer[0] == *"y");
 }
 
+void GameManager::displayBudget(uint budget) {
+    cout << "+--------------------------------------+" << endl;
+    cout << "|           Budget : "<< setw(8) << budget << " $        |" <<  endl;
+    cout << "+--------------------------------------+" << endl;
+
+}
+
+void GameManager::correctAnswer() {
+    cout << "+--------------------------------------+" << endl;
+    cout << "|      select a correct answer !       |" << endl;
+    cout << "+--------------------------------------+" << endl;
+
+}
+
+int GameManager::diplaywichHabitat() {
+    string answer;
 
 
+    cout << "+--------------------------------------+" << endl;
+    cout << "|which habitat do you want to choose ? |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    cout << "|1 - Chicken coop           " << setw(8) << 300 << " $ |" <<  endl;
+    cout << "|2 - Tiger habitat          " << setw(8) << 2000 << " $ |" <<  endl;
+    cout << "|3 - Eagle habitat          " << setw(8) << 2000 << " $ |" <<  endl;
+    cout << "+--------------------------------------+" << endl;
+    cout << "chose 1, 2 or 3 : ";
+    cin >> answer;
 
+    while (answer != "1" && answer != "2" && answer != "3") {
+        cout << "chose 1, 2 or 3 : ";
+        cin >> answer;
+    }
+
+    return stoi(answer);
+
+}
+
+//int GameManager::diplaywichHabitatSell() {
+//
+//    string answer;
+//    int id = 0;
+//
+//
+//
+//    cout << "+--------------------------------------+" << endl;
+//    cout << "|which habitat do you want to choose ? |" << endl;
+//    cout << "+--------------------------------------+" << endl;
+//    for (int i = 0; i < )
+//    cout << "|1 - Chicken coop                      " << endl
+//
+//
+//    cout << "|1 - Chicken coop           " << setw(8) << 300 << " $ |" <<  endl;
+//    cout << "|2 - Tiger habitat          " << setw(8) << 2000 << " $ |" <<  endl;
+//    cout << "|3 - Eagle habitat          " << setw(8) << 2000 << " $ |" <<  endl;
+//    cout << "+--------------------------------------+" << endl;
+//    cout << "chose 1, 2 or 3 : ";
+//    cin >> answer;
+//
+//    while (answer != "1" && answer != "2" && answer != "3") {
+//        cout << "chose 1, 2 or 3 : ";
+//        cin >> answer;
+//    }
+//
+//    return stoi(answer);
+//
+//}
+//

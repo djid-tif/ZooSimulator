@@ -7,6 +7,8 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -56,7 +58,7 @@ public:
     vector<IHabitat *> getListHabitat() const;
     void deleteHabitat(int);
 
-    void buyHabitat();
+    bool buyHabitat(int);
     void addHabitat(IHabitat *);
     void sellHabitat();
 

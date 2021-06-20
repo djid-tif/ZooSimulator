@@ -3,7 +3,7 @@
 //
 
 #include "Zoo.h"
-#include <iostream>
+
 #include "./Zoo.h"
 
 
@@ -56,40 +56,54 @@ void Zoo::deleteHabitat(int indexOfHabitat) {
     delete habitat;
 }
 
-void Zoo::buyHabitat() {
-    cout << "witch habit want you buy ?" << endl;                   //TODO Lakhdar
-    cout << "       Chicken coop ? (300€)       (press 1)" << endl; //TODO Lakhdar
-    cout << "       Tiger habitat ? (2'000€)    (press 2)" << endl; //TODO Lakhdar
-    cout << "       Eagle habitat ? (2'000€)    (press 3)" << endl; //TODO Lakhdar
-
-    int r = 0;                                                 //TODO Lakhdar
-
-    cin >> r;
-
+bool Zoo::buyHabitat(int r) {
 
     if (r == 1) {
         if (debiteBudget(300)){
             addHabitat(new ChickenCoop);
+        } else {
+            return false;
         }
     } else if (r == 2) {
         if (debiteBudget(2000)){
             addHabitat(new TigerHabitat);
+        } else {
+            return false;
         }
     } else if (r == 3) {
         if (debiteBudget(2000)){
             addHabitat(new EagleHabitat);
+        } else {
+            return false;
         }
     }
+    return true;
 }
 
 void Zoo::sellHabitat() {
 
-    cout << "liste de ses habitat" << endl;   //TODO lakhdar
-    cout << "choisir quel habitat" << endl;   //TODO lakhdar
+    string answer;
+    auto list = getListHabitat();
 
-    int resIndexHabitat = 0;
 
-    cin >> resIndexHabitat;
+    cout << "+--------------------------------------+" << endl;
+    cout << "|which habitat do you want to choose ? |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    for (int i = 0; i < list.size(); i++) {
+        cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+    }
+
+    cout << "+--------------------------------------+" << endl;
+    cout << "chose habitat : ";
+    cin >> answer;
+
+    while (stoi(answer) < 1 && stoi(answer) > list.size()) {
+        cout << stoi(answer) << endl;
+        cout << "chose habitat : ";
+        cin >> answer;
+    }
+
+    int resIndexHabitat = stoi(answer)-1;
 
 
     IHabitat *habitat = listHabitat.at(resIndexHabitat);
@@ -149,54 +163,99 @@ void Zoo::addAnimalInsideHabitat(IHabitat *habitat, IAnimal *aninal) {
 }
 
 void Zoo::buyAnimal() {
+    if (getListHabitat().empty()) {
+        return;
+    }
 
-    cout << " Animal :               | 	Prix achat:  " << endl;          //TODO Lakhdar
-    cout << "-----------------------------------------" << endl;          //TODO Lakhdar
-    cout << " Tigre 6 mois	         |    3000€  " << endl;          //TODO Lakhdar
-    cout << " Poule 6 mois	         |    20€  " << endl;             //TODO Lakhdar
-    cout << " Coq 6 mois	         |    100€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 6 mois	         |    1000€  " << endl;             //TODO Lakhdar
-    cout << " Tigre 4 ans	         |    120000€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 4 ans	         |    4000€  " << endl;             //TODO Lakhdar
-    cout << " Tigre 14 ans	         |    60000€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 14 ans	         |    2000€  " << endl;             //TODO Lakhdar
-    cout << "" << endl;                                                  //TODO Lakhdar
-    cout << "" << endl;                                                 //TODO Lakhdar
+    cout << "+-----------------------------------------+" << endl;
+    cout << "|Animal :               | 	Prix achat:    | " << endl;
+    cout << "|-----------------------------------------|" << endl;
+    cout << "|Tigre 6 mois	         |    3000€        |" << endl;
+    cout << "|Poule 6 mois	         |    20€          |" << endl;
+    cout << "|Coq 6 mois	         |    100€         |" << endl;
+    cout << "|Aigle 6 mois	         |    1000€        |" << endl;
+    cout << "|Tigre 4 ans	         |    120000€      |" << endl;
+    cout << "|Aigle 4 ans	         |    4000€        |" << endl;
+    cout << "|Tigre 14 ans	         |    60000€       |" << endl;
+    cout << "|Aigle 14 ans	         |    2000€        |" << endl;
+    cout << "+-----------------------------------------+" << endl;
 
-    cout << "witch animal want you buy ?" << endl;                       //TODO Lakhdar
-    cout << "                           press :  Chicken - 1 " << endl; //TODO Lakhdar
-    cout << "                                    Rooster - 2 " << endl; //TODO Lakhdar
-    cout << "                                    Tiger   - 3 " << endl; //TODO Lakhdar
-    cout << "                                    Eagle   - 4 " << endl; //TODO Lakhdar
+    cout << "" << endl;
+    cout << "" << endl;
+    cout << "+-----------------------------------------+" << endl;
+    cout << "|   witch animal want you buy ?           |" << endl;
+    cout << "+-----------------------------------------+" << endl;
+    cout << "|1- Chicken                               |" << endl;
+    cout << "|2- Rooster                               |" << endl;
+    cout << "|3- Tiger                                 |" << endl;
+    cout << "|4- Eagle                                 |" << endl;
+    cout << "+-----------------------------------------+" << endl;
 
-    int resForAnimal = 0;                                             //TODO Lakhdar
+    int resForAnimal = 0;
     cin >> resForAnimal;
 
+    while (resForAnimal != 1 && resForAnimal != 2 && resForAnimal != 3 && resForAnimal != 4) {
+        cout << "chose 1, 2, 3, 4, 5 or 6 : ";
+        cin >> resForAnimal;
+    }
+
+
     if (resForAnimal == 1) {
-
-        cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-        cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
         int resForIndexOfHisHabitat = 0;
+        auto list = getListHabitat();
 
+
+
+        cout << "+--------------------------------------+" << endl;
+        cout << "|which habitat do you want to choose ? |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        for (int i = 0; i < list.size(); i++) {
+            cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+        }
+        cout << "+--------------------------------------+" << endl;
+        cout << "chose habitat : ";
         cin >> resForIndexOfHisHabitat;
+
+        while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+            cout << resForIndexOfHisHabitat << endl;
+            cout << "chose habitat : ";
+            cin >> resForIndexOfHisHabitat;
+        }
+
+        resForIndexOfHisHabitat--;
+
 
         if (debiteBudget(20)){
             if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Chicken"){
                 listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("Chicken",6*30);
             } else {
-                cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl;
             }
         }
 
     } else if (resForAnimal == 2) {
 
-        cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-        cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
         int resForIndexOfHisHabitat = 0;
+        auto list = getListHabitat();
 
+
+
+        cout << "+--------------------------------------+" << endl;
+        cout << "|which habitat do you want to choose ? |" << endl;
+        cout << "+--------------------------------------+" << endl;
+        for (int i = 0; i < list.size(); i++) {
+            cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+        }
+        cout << "+--------------------------------------+" << endl;
+        cout << "chose habitat : ";
         cin >> resForIndexOfHisHabitat;
+
+        while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+            cout << resForIndexOfHisHabitat << endl;
+            cout << "chose habitat : ";
+            cin >> resForIndexOfHisHabitat;
+        }
+        resForIndexOfHisHabitat--;
 
         if (debiteBudget(100)){
             if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Chicken"){
@@ -213,7 +272,7 @@ void Zoo::buyAnimal() {
         cout << "                                    4 years  - 2 " << endl; //TODO Lakhdar
         cout << "                                    14 years - 3 " << endl; //TODO Lakhdar
 
-        int resForAge = 0;                                             //TODO Lakhdar
+        int resForAge = 0;
         cin >> resForAge;
         int age = 0;
 
@@ -226,22 +285,38 @@ void Zoo::buyAnimal() {
         }
 
         cout << "OK, now female or male ?" << endl;
-        cout << "                           press :  Female  - F " << endl; //TODO Lakhdar
-        cout << "                                    Male    - M " << endl; //TODO Lakhdar
+        cout << "                           press :  Female  - F " << endl;
+        cout << "                                    Male    - M " << endl;
 
-        char resForSex = ' ';                                             //TODO Lakhdar
+        char resForSex = ' ';
         cin >> resForSex;
 
 
         if (resForAnimal == 3) {
             if (resForSex == 'F' || resForSex == 'f' ) {
 
-                cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-                cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
                 int resForIndexOfHisHabitat = 0;
+                auto list = getListHabitat();
 
+
+
+                cout << "+--------------------------------------+" << endl;
+                cout << "|which habitat do you want to choose ? |" << endl;
+                cout << "+--------------------------------------+" << endl;
+                for (int i = 0; i < list.size(); i++) {
+                    cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+                }
+                cout << "+--------------------------------------+" << endl;
+                cout << "chose habitat : ";
                 cin >> resForIndexOfHisHabitat;
+
+                while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+                    cout << resForIndexOfHisHabitat << endl;
+                    cout << "chose habitat : ";
+                    cin >> resForIndexOfHisHabitat;
+                }
+
+                resForIndexOfHisHabitat--;
 
                 bool enoughBudget = true;
                 if (resForAge == 1) {
@@ -256,18 +331,33 @@ void Zoo::buyAnimal() {
                     if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Tiger"){
                     listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerF",age);
                     } else {
-                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl;
                     }
                 }
 
             } else {
 
-                cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-                cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
                 int resForIndexOfHisHabitat = 0;
+                auto list = getListHabitat();
 
+
+
+                cout << "+--------------------------------------+" << endl;
+                cout << "|which habitat do you want to choose ? |" << endl;
+                cout << "+--------------------------------------+" << endl;
+                for (int i = 0; i < list.size(); i++) {
+                    cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+                }
+                cout << "+--------------------------------------+" << endl;
+                cout << "chose habitat : ";
                 cin >> resForIndexOfHisHabitat;
+
+                while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+                    cout << resForIndexOfHisHabitat << endl;
+                    cout << "chose habitat : ";
+                    cin >> resForIndexOfHisHabitat;
+                }
+                resForIndexOfHisHabitat--;
 
                 bool enoughBudget = true;
                 if (resForAge == 1) {
@@ -282,20 +372,35 @@ void Zoo::buyAnimal() {
                     if (listHabitat.at(resForIndexOfHisHabitat)->getTypeOfAnimal() == "Tiger"){
                         listHabitat.at(resForIndexOfHisHabitat)->buyAnimal("TigerM",age);
                     } else {
-                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl; // TODO Lakhdar
+                        cout << "l'habitat n'est pas adéqua a ce genre d'animaux" << endl;
                     }
                 }
 
             }
         } else {
             if (resForSex == 'F') {
-
-                cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-                cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
                 int resForIndexOfHisHabitat = 0;
+                auto list = getListHabitat();
 
+
+
+                cout << "+--------------------------------------+" << endl;
+                cout << "|which habitat do you want to choose ? |" << endl;
+                cout << "+--------------------------------------+" << endl;
+                for (int i = 0; i < list.size(); i++) {
+                    cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+                }
+                cout << "+--------------------------------------+" << endl;
+                cout << "chose habitat : ";
                 cin >> resForIndexOfHisHabitat;
+
+                resForIndexOfHisHabitat--;
+
+                while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+                    cout << resForIndexOfHisHabitat << endl;
+                    cout << "chose habitat : ";
+                    cin >> resForIndexOfHisHabitat;
+                }
 
                 bool enoughBudget = true;
                 if (resForAge == '1') {
@@ -316,12 +421,28 @@ void Zoo::buyAnimal() {
 
             } else {
 
-                cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-                cout << "Selectionner un habitat" << endl; // TODO Lakhdar
-
                 int resForIndexOfHisHabitat = 0;
+                auto list = getListHabitat();
 
+
+
+                cout << "+--------------------------------------+" << endl;
+                cout << "|which habitat do you want to choose ? |" << endl;
+                cout << "+--------------------------------------+" << endl;
+                for (int i = 0; i < list.size(); i++) {
+                    cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+                }
+                cout << "+--------------------------------------+" << endl;
+                cout << "chose habitat : ";
                 cin >> resForIndexOfHisHabitat;
+
+                resForIndexOfHisHabitat--;
+
+                while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+                    cout << resForIndexOfHisHabitat << endl;
+                    cout << "chose habitat : ";
+                    cin >> resForIndexOfHisHabitat;
+                }
 
                 bool enoughBudget = true;
                 if (resForAge == '1') {
@@ -349,25 +470,32 @@ void Zoo::buyAnimal() {
 
 void Zoo::sellAnimal() {
 
-    cout << " Animal :               | 	Prix de vente:  " << endl;          //TODO Lakhdar
-    cout << "-----------------------------------------" << endl;          //TODO Lakhdar
-    cout << " Tigre 6 mois	         |    3000€  " << endl;          //TODO Lakhdar
-    cout << " Poule 6 mois	         |    20€  " << endl;             //TODO Lakhdar
-    cout << " Coq 6 mois	         |    100€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 6 mois	         |    1000€  " << endl;             //TODO Lakhdar
-    cout << " Tigre 4 ans	         |    120000€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 4 ans	         |    4000€  " << endl;             //TODO Lakhdar
-    cout << " Tigre 14 ans	         |    60000€  " << endl;             //TODO Lakhdar
-    cout << " Aigle 14 ans	         |    2000€  " << endl;             //TODO Lakhdar
-    cout << "" << endl;                                                  //TODO Lakhdar
-    cout << "" << endl;                                                 //TODO Lakhdar
-
-    cout << "Tableau de ses habitat" << endl; // TODO Lakhdar
-    cout << "Selectionner un habitat" << endl; // TODO Lakhdar
+    if (getListHabitat().empty()) {
+        return;
+    }
 
 
     int resForIndexOfHisHabitat = 0;
+    auto list = getListHabitat();
+
+
+
+    cout << "+--------------------------------------+" << endl;
+    cout << "|which habitat do you want to choose ? |" << endl;
+    cout << "+--------------------------------------+" << endl;
+    for (int i = 0; i < list.size(); i++) {
+        cout << "|" << i+1 << "-" << setw(14) << list[i]->getTypeOfAnimal() << " Habitat              |"<< endl;
+    }
+    cout << "+--------------------------------------+" << endl;
+    cout << "chose habitat : ";
     cin >> resForIndexOfHisHabitat;
+
+    while (resForIndexOfHisHabitat < 1 && resForIndexOfHisHabitat > list.size()) {
+        cout << resForIndexOfHisHabitat << endl;
+        cout << "chose habitat : ";
+        cin >> resForIndexOfHisHabitat;
+    }
+
 
     IHabitat* habitat = listHabitat.at(resForIndexOfHisHabitat);
 

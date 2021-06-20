@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "./zoo/Zoo.h"
-#include "gameManager/gameManager.h"
+#include "./gameManager/gameManager.h"
 
 
 using namespace std;
@@ -12,15 +12,56 @@ int main() {
 
 
     Zoo *zoo = new Zoo(new Seed, new Meat);
+    GameManager::displayWelcome();
 
     int date = 0;
 
     while (date < 120 * 360) {
-
-        cout << "argent :" << zoo->getBudget() << endl;
-
-
         date++;
+
+
+        GameManager::displayBudget(zoo->getBudget());
+
+
+
+        int menuChoice = 0;
+
+        while ( menuChoice != 4) {
+
+            menuChoice = GameManager::displayMenu();
+
+            if (menuChoice != 1 && menuChoice != 2 && menuChoice != 3 && menuChoice != 4) {
+                GameManager::correctAnswer();
+                GameManager::displayMenu();
+            }
+
+            if (menuChoice == 1) {
+                if (GameManager::buyorSell() == 1) {
+                    zoo->buyAnimal();
+                } else {
+                    zoo->sellAnimal();
+                }
+            }
+
+
+
+            if (menuChoice == 3) {
+                if (GameManager::buyorSell() == 1) {
+                    zoo->buyHabitat(GameManager::diplaywichHabitat());
+                } else {
+                    zoo->sellHabitat();
+                }
+
+
+            }
+
+
+
+
+
+
+        }
+
 
         cout << "que voulez vous faire :" << endl;
         cout << "       - acheter un habitat press 1" << endl;
@@ -33,9 +74,12 @@ int main() {
 
         cin >> res;
 
+
+
+
         switch (res) {
             case 1:
-                zoo->buyHabitat();
+//                zoo->buyHabitat();
                 break;
             case 2:
                 zoo->sellHabitat();
@@ -62,7 +106,7 @@ int main() {
 
             switch (res) {
                 case 1:
-                    zoo->buyHabitat();
+//                    zoo->buyHabitat();
                     break;
                 case 2:
                     zoo->sellHabitat();
