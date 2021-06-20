@@ -391,19 +391,19 @@ void Zoo::oneDayHasPassed() {
 }
 
 void Zoo::oneMonthHasPassed() {
-    for (int i = 0; i < listHabitat.size();++i){
-        listHabitat[i]->oneMonthHasPassed();
+    for (auto & i : listHabitat){
+        i->oneMonthHasPassed();
 
-        for (int i2 = 0; i2 < listHabitat[i]->getAnimalsInside().size();++i2) {
-            if (!listHabitat[i]->getAnimalsInside().at(i2)->isSick()) {
+        for (int i2 = 0; i2 < i->getAnimalsInside().size();++i2) {
+            if (!i->getAnimalsInside().at(i2)->isSick()) {
                 if (date % 12 * 30 > 5 * 30 && date % 12 * 30 < 9 * 30) {
                     creditBudget(
-                            listHabitat[i]->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfHighSeason() * 2 * 17 +
-                                    listHabitat[i]->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfHighSeason() * 2 * 13);
+                            i->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfHighSeason() * 2 * 17 +
+                                    i->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfHighSeason() * 2 * 13);
                 } else {
                     creditBudget(
-                            listHabitat[i]->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfLowSeason() * 2 * 17 +
-                                    listHabitat[i]->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfLowSeason() * 2 * 13);
+                            i->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfLowSeason() * 2 * 17 +
+                                    i->getAnimalsInside().at(i2)->getNumberOfVisitorsPerMonthOfLowSeason() * 2 * 13);
                 }
             }
         }

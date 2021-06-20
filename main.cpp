@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "./zoo/Zoo.h"
+#include "gameManager/gameManager.h"
 
 
 using namespace std;
@@ -10,12 +11,14 @@ int main() {
 
 
 
-    Zoo zoo();
+    Zoo *zoo = new Zoo(new Seed, new Meat);
 
     int date = 0;
 
     while (date < 120 * 360) {
-        cout << "argent :" << zoo.getBudget() << endl;
+        GameManager::displayWelcome();
+
+        cout << "argent :" << zoo->getBudget() << endl;
 
 
         date++;
@@ -33,16 +36,16 @@ int main() {
 
         switch (res) {
             case 1:
-                zoo.buyHabitat();
+                zoo->buyHabitat();
                 break;
             case 2:
-                zoo.sellHabitat();
+                zoo->sellHabitat();
                 break;
             case 3:
-                zoo.buyAnimal();
+                zoo->buyAnimal();
                 break;
             case 4:
-                zoo.sellAnimal();
+                zoo->sellAnimal();
                 break;
             default:
                 break;
@@ -60,28 +63,28 @@ int main() {
 
             switch (res) {
                 case 1:
-                    zoo.buyHabitat();
+                    zoo->buyHabitat();
                     break;
                 case 2:
-                    zoo.sellHabitat();
+                    zoo->sellHabitat();
                     break;
                 case 3:
-                    zoo.buyAnimal();
+                    zoo->buyAnimal();
                     break;
                 case 4:
-                    zoo.sellAnimal();
+                    zoo->sellAnimal();
                     break;
             }
 
         }
 
         for (int i = 0; i < 30; ++i) {
-            zoo.oneDayHasPassed();
+            zoo->oneDayHasPassed();
             date++;
         }
 
 
-        zoo.oneMonthHasPassed();
+        zoo->oneMonthHasPassed();
     }
 
     return 0;
