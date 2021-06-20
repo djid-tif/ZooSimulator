@@ -49,7 +49,7 @@ public:
 
 
     int getAge() const;
-    string getFeed() const;
+    string getFeed() ;
     int getAmountOfFoodToEaPerDay() const;
     int getHungryDay() const;
     int getAgeToSexualMaturity() const;
@@ -74,8 +74,9 @@ public:
     bool isPregnant() const;
     bool isChildBirth() const;
 
-    void reproduction();
-    void oneDayOfPregnant(int indexOfHabitat);
+    virtual void reproduction();
+
+    virtual void oneDayOfPregnant(int indexOfHabitat);
 
     void setChildBirth(bool childBirth);
 

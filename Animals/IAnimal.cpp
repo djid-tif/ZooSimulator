@@ -5,9 +5,6 @@
 #include "./IAnimal.h"
 
 
-IAnimal::~IAnimal() {
-
-};
 
 void IAnimal::oneDaysHasPassed(int indexOfHabitat, int indexOfAnimal) {
 
@@ -70,7 +67,7 @@ int IAnimal::getAge() const {
     return age;
 }
 
-string IAnimal::getFeed() const {
+string IAnimal::getFeed() {
     return feed;
 }
 
@@ -184,5 +181,7 @@ IAnimal::IAnimal() {
     pregnantCount = 0;
     countDayReFertilization = 0;
 }
+
+IAnimal::~IAnimal() = default;
 
 

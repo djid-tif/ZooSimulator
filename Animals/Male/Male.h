@@ -11,8 +11,8 @@
 class Male : public IAnimal{
 
 public:
-    void reproduction();
-    void oneDayOfPregnant( int indexOfHabitat);
+    void reproduction() override;
+    void oneDayOfPregnant( int indexOfHabitat) override;
 };
 
 
