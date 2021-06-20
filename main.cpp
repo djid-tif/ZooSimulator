@@ -8,7 +8,9 @@ using namespace std;
 
 int main() {
 
-    Zoo zoo;
+
+
+    Zoo zoo();
 
     int date = 0;
 
@@ -42,6 +44,8 @@ int main() {
             case 4:
                 zoo.sellAnimal();
                 break;
+            default:
+                break;
         }
         while (res != 5) {
             cout << "que voulez vous faire :" << endl;
@@ -51,7 +55,6 @@ int main() {
             cout << "       - vendre un animal press 4" << endl;
             cout << "       - quite 5" << endl;
 
-            int res = 0;
 
             cin >> res;
 
