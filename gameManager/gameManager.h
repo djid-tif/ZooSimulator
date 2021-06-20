@@ -5,6 +5,9 @@
 #ifndef ZOOSIMULATOR_GAMEMANAGER_H
 #define ZOOSIMULATOR_GAMEMANAGER_H
 
+#include <iostream>
+#include <iomanip>
+
 
 class GameManager {
 

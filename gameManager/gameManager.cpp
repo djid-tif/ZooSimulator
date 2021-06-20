@@ -3,9 +3,6 @@
 //
 
 #include "gameManager.h"
-#include <iostream>
-#include <iomanip>
-#include <cstdio>
 
 using namespace std;
 
@@ -137,5 +134,7 @@ bool GameManager::yesOrNoQuestion() {
     }
     return (answer[0] == *"y");
 }
+
+
 
 
