@@ -1,5 +1,7 @@
 # ZooSimulator
 
+groupe : Lakhdar Tifour, Raphael Arabeyre, Brahim Gnaoui
+
 ## Pour jouer :
 
 
