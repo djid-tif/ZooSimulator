@@ -7,11 +7,11 @@
 
 using namespace std;
 
-Seed::Seed() : quantity(2500) {}
+Seed::Seed() : quantity(2500), PRICE(1000) {}
 
-
-void Seed::addSeeds(int q) {
+int Seed::addSeeds(int q) {
     quantity += q;
+    return PRICE * q;
 }
 
 bool Seed::remove(int q) {
@@ -24,8 +24,6 @@ bool Seed::remove(int q) {
     }
 }
 
-int Seed::getQuantity() {
+int Seed::getQuantity() const {
     return quantity;
 }
-
-

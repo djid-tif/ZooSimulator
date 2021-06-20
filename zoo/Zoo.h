@@ -7,6 +7,9 @@
 
 #include <vector>
 #include <string>
+
+using namespace std;
+
 #include <cstdlib>
 #include "../food/Seed.h"
 //#include "../food/Seed.cpp"
@@ -48,7 +51,7 @@ public:
     bool debiteBudget(uint debite);
 
     void buyFood(int seed, int meat);
-    
+
 
     vector<IHabitat *> getListHabitat() const;
     void deleteHabitat(int);

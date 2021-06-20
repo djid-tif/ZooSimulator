@@ -17,14 +17,15 @@ using namespace std;
 class Seed : public IFood {
 
     int quantity;
+    int const PRICE;
 
 public:
 
     Seed();
 
-    void addSeeds(int q);
+    int addSeeds(int q);
 
-    int getQuantity();
+    int getQuantity() const;
 
 
     bool remove(int q);

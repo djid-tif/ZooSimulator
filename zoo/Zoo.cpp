@@ -2,17 +2,14 @@
 // Created by raphou le bg on 03/06/2021.
 //
 
+#include "Zoo.h"
 #include <iostream>
 #include "./Zoo.h"
 
 
+using namespace std;
 
-
-Zoo::Zoo() {
-    budget = 80000;
-}
-
-Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {}
+Zoo::Zoo(Seed *seed, Meat *meat) : budget(4000), m_seed(*seed), m_meat(*meat) {};
 
 uint Zoo::getBudget() const {
     return budget;
@@ -40,7 +37,7 @@ bool Zoo::debiteBudget(uint debite) {
 
 
 
-void Zoo::buyFood(int seed, int meat) {
+void Zoo::buyFood(int seed ,int meat) {
     m_seed.addSeeds(seed);
 }
 
